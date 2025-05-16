@@ -1,6 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees", "CompanyEmployees.csproj", "{18A1E876-B2DD-4AFF-95E8-F21611822CE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees", "CompanyEmployees\CompanyEmployees.csproj", "{FB026E2D-FE27-4E9C-ADB6-374FDB396B8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingService", "LoggingService\LoggingService.csproj", "{67B13330-7595-4687-89DD-7CCBFE762223}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89675362-D747-43CC-B918-59407D03CBA8}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +15,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{18A1E876-B2DD-4AFF-95E8-F21611822CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18A1E876-B2DD-4AFF-95E8-F21611822CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18A1E876-B2DD-4AFF-95E8-F21611822CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18A1E876-B2DD-4AFF-95E8-F21611822CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB026E2D-FE27-4E9C-ADB6-374FDB396B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB026E2D-FE27-4E9C-ADB6-374FDB396B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB026E2D-FE27-4E9C-ADB6-374FDB396B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB026E2D-FE27-4E9C-ADB6-374FDB396B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B13330-7595-4687-89DD-7CCBFE762223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B13330-7595-4687-89DD-7CCBFE762223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B13330-7595-4687-89DD-7CCBFE762223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B13330-7595-4687-89DD-7CCBFE762223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

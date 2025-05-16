@@ -1,0 +1,38 @@
+﻿services:
+  companyemployees:
+    image: companyemployees
+    build:
+      context: .
+      dockerfile: CompanyEmployees/Dockerfile
+  mssql:
+    container_name: sql-server-company-employees
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    #restart: always
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "MyStrongPassword12345678"
+    ports:
+      - "1433:1433"
+    volumes:
+      - my-volume:/var/opt/mssql-companyemployees
+  seq:
+    image: datalust/seq:latest
+    container_name: seq
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_API_CANONICALURI=https://seq.example.com
+      - SEQ_FIRSTRUN_ADMINUSERNAME=admin
+      #pass - 11111
+      - SEQ_FIRSTRUN_ADMINPASSWORDHASH=QH8NOzO/AnYQmjoHClWpGBqixU57+rbJLp7LfrgYP+IrB4eHtlTXl5Aqb0PZm7JXvHNsTtXFwQO63U4z0vnmFQgCTPCBsGYF57CkCmXGyP5w
+    ports:
+      - "5341:80"
+    volumes:
+      - my-volume:/var/opt/seq/data:/data
+    restart: unless-stopped
+
+volumes:
+  my-volume:
+
+networks:
+  mynetwork:
+    driver: bridge

@@ -1,0 +1,94 @@
+[13:56:14 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[13:56:14 INFORMATION] Now listening on: https://localhost:7025
+[13:56:14 INFORMATION] Now listening on: http://localhost:5266
+[13:56:14 INFORMATION] Application started. Press Ctrl+C to shut down.
+[13:56:14 INFORMATION] Hosting environment: Development
+[13:56:14 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[13:56:19 INFORMATION] Request starting HTTP/2 GET https://localhost:7025/ - null null
+[13:56:19 INFORMATION] Request finished HTTP/2 GET https://localhost:7025/ - 404 0 null 93.6896ms
+[13:56:19 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/, Response status code: 404
+[13:56:33 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Games - null null
+[13:56:33 INFORMATION] Executing endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[13:56:33 INFORMATION] Route matched with {action = "Get", controller = "Games"}. Executing controller action with signature CompanyEmployees.Models.Player Get() on controller CompanyEmployees.Controllers.GamesController (CompanyEmployees).
+[13:56:33 INFORMATION] Executing action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) - Validation state: "Valid"
+[13:56:33 INFORMATION] This is an information message
+[13:56:33 WARNING] This is a warn message
+[13:56:33 ERROR] This is an error message
+[13:56:33 INFORMATION] Executed action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 10.94ms.
+[13:56:33 INFORMATION] Executing ObjectResult, writing value of type 'CompanyEmployees.Models.Player'.
+[13:56:33 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 155.9477ms
+[13:56:33 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[13:56:33 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 200 null application/json; charset=utf-8 219.2192ms
+[14:10:22 INFORMATION] Application is shutting down...
+[14:18:02 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[14:18:03 INFORMATION] Now listening on: https://localhost:7025
+[14:18:03 INFORMATION] Now listening on: http://localhost:5266
+[14:18:03 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:18:03 INFORMATION] Hosting environment: Development
+[14:18:03 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[14:18:12 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Games - null null
+[14:18:12 INFORMATION] Executing endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:18:12 INFORMATION] Route matched with {action = "Get", controller = "Games"}. Executing controller action with signature CompanyEmployees.Models.Player Get() on controller CompanyEmployees.Controllers.GamesController (CompanyEmployees).
+[14:18:12 INFORMATION] Executing action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) - Validation state: "Valid"
+[14:18:12 INFORMATION] This is an information message
+[14:18:12 WARNING] This is a warn message
+[14:18:12 ERROR] This is an error message
+[14:18:12 INFORMATION] Executed action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.7389ms.
+[14:18:12 INFORMATION] Executing ObjectResult, writing value of type 'CompanyEmployees.Models.Player'.
+[14:18:12 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 125.2472ms
+[14:18:12 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:18:12 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 200 null application/json; charset=utf-8 214.0726ms
+[14:19:04 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Games - null null
+[14:19:04 INFORMATION] Executing endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:19:04 INFORMATION] Route matched with {action = "Get", controller = "Games"}. Executing controller action with signature CompanyEmployees.Models.Player Get() on controller CompanyEmployees.Controllers.GamesController (CompanyEmployees).
+[14:19:04 INFORMATION] Executing action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) - Validation state: "Valid"
+[14:19:04 INFORMATION] This is an information message
+[14:19:04 WARNING] This is a warn message
+[14:19:04 ERROR] This is an error message
+[14:19:04 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 14.329ms
+[14:19:04 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:19:04 ERROR] An unhandled exception has occurred while executing the request.
+[14:19:04 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 500 null text/plain; charset=utf-8 61.803ms
+[14:19:13 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Games - null null
+[14:19:13 INFORMATION] Executing endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:19:13 INFORMATION] Route matched with {action = "Get", controller = "Games"}. Executing controller action with signature CompanyEmployees.Models.Player Get() on controller CompanyEmployees.Controllers.GamesController (CompanyEmployees).
+[14:19:13 INFORMATION] Executing action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) - Validation state: "Valid"
+[14:19:13 INFORMATION] This is an information message
+[14:19:13 WARNING] This is a warn message
+[14:19:13 ERROR] This is an error message
+[14:19:13 INFORMATION] Executed action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.7216ms.
+[14:19:13 INFORMATION] Executing ObjectResult, writing value of type 'CompanyEmployees.Models.Player'.
+[14:19:13 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 9.8322ms
+[14:19:13 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:19:13 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 200 null application/json; charset=utf-8 17.8549ms
+[14:20:26 INFORMATION] Application is shutting down...
+[14:20:30 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[14:20:31 INFORMATION] Now listening on: https://localhost:7025
+[14:20:31 INFORMATION] Now listening on: http://localhost:5266
+[14:20:31 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:20:31 INFORMATION] Hosting environment: Development
+[14:20:31 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[14:22:09 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Games - null null
+[14:22:09 INFORMATION] Executing endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:22:09 INFORMATION] Route matched with {action = "Get", controller = "Games"}. Executing controller action with signature CompanyEmployees.Models.Player Get() on controller CompanyEmployees.Controllers.GamesController (CompanyEmployees).
+[14:22:09 INFORMATION] Executing action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) - Validation state: "Valid"
+[14:22:09 INFORMATION] This is an information message
+[14:22:09 WARNING] This is a warn message
+[14:22:09 ERROR] This is an error message
+[14:22:09 INFORMATION] Executed action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 30.0582ms.
+[14:22:09 INFORMATION] Executing ObjectResult, writing value of type 'CompanyEmployees.Models.Player'.
+[14:22:09 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 127.6397ms
+[14:22:09 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:22:09 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 200 null application/json; charset=utf-8 209.0545ms
+[14:37:49 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Games - null null
+[14:37:49 INFORMATION] Executing endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:37:49 INFORMATION] Route matched with {action = "Get", controller = "Games"}. Executing controller action with signature CompanyEmployees.Models.Player Get() on controller CompanyEmployees.Controllers.GamesController (CompanyEmployees).
+[14:37:49 INFORMATION] Executing action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) - Validation state: "Valid"
+[14:37:49 INFORMATION] This is an information message
+[14:37:49 WARNING] This is a warn message
+[14:37:49 ERROR] This is an error message
+[14:37:49 INFORMATION] Executed action method CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 4.1073ms.
+[14:37:49 INFORMATION] Executing ObjectResult, writing value of type 'CompanyEmployees.Models.Player'.
+[14:37:49 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 37.317ms
+[14:37:49 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
+[14:37:49 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 200 null application/json; charset=utf-8 100.7512ms
