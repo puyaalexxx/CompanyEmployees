@@ -92,3 +92,4 @@
 [14:37:49 INFORMATION] Executed action CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees) in 37.317ms
 [14:37:49 INFORMATION] Executed endpoint 'CompanyEmployees.Controllers.GamesController.Get (CompanyEmployees)'
 [14:37:49 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Games - 200 null application/json; charset=utf-8 100.7512ms
+[14:45:00 INFORMATION] Application is shutting down...
