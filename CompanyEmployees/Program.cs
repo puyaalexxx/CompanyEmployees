@@ -17,9 +17,12 @@ builder.Host.UseSerilog((hostContext, configuration) =>
 //builder.Services.AddKeyedScoped<IPlayerGenerator, PlayerGenerator>("player");
 builder.Services.AddScoped<IPlayerGenerator, PlayerGenerator>();
 
+builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIintegration();
 builder.Services.ConfigureLoggerService();
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
 
 builder.Services.AddControllers();
 
