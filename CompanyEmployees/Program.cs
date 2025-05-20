@@ -1,7 +1,6 @@
 using CompanyEmployees;
-using CompanyEmployees.Extensions;
+using CompanyEmployees.Infrastructure.Presentation;
 using CompanyEmployees.ServiceExtensions;
-using LoggingService;
 using Microsoft.AspNetCore.HttpOverrides;
 using Serilog;
 
@@ -26,7 +25,17 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 
 //route the controllers to this class library
-builder.Services.AddControllers().AddApplicationPart(typeof(CompanyEmployees.Infrastructure.Presentation.AssemblyReference).Assembly);
+builder.Services.AddControllers(
+        //content negotiation
+        config =>
+        {
+            config.RespectBrowserAcceptHeader = true;
+            //if requesting another media type that is not supported to return 406 Not Acceptable
+            config.ReturnHttpNotAcceptable = true;
+        })
+    .AddXmlDataContractSerializerFormatters()
+    .AddCustomCSVFormatter()
+    .AddApplicationPart(typeof(AssemblyReference).Assembly);
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
@@ -38,14 +47,9 @@ app.UseExceptionHandler(opts => { });
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{
     app.MapOpenApi();
-    
-}
 else
-{   
     app.UseHsts();
-}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

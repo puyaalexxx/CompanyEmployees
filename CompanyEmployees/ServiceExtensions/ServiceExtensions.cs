@@ -1,7 +1,9 @@
+using System.Collections.Immutable;
 using System.Xml.Serialization;
 using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services;
 using CompanyEmployees.Core.Services.Abstractions;
+using CompanyEmployees.Formatters;
 using CompanyEmployees.Infrastructure.Persistence;
 using LoggingService;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +32,9 @@ public static class ServiceExtensions
     
     public static void ConfigureServiceManager(this IServiceCollection services) => 
         services.AddScoped<IServiceManager, ServiceManager>();
+
+    public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
+        builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
 
     //if we will need to host it on IIS
     public static void ConfigureIISIintegration(this IServiceCollection services) => 
