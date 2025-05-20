@@ -4,7 +4,7 @@ using CompanyEmployees.Core.Services;
 using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Infrastructure.Persistence;
 using LoggingService;
-using Microsoft.EntityFrameworkCore.0;
+using Microsoft.EntityFrameworkCore;
 
 namespace CompanyEmployees.ServiceExtensions;
 

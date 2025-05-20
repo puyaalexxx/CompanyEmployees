@@ -1,4 +1,3 @@
-using CompanyEmployees.Service;
 using CompanyEmployees.ServiceExtensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using Serilog;
@@ -15,7 +14,6 @@ builder.Host.UseSerilog((hostContext, configuration) =>
 });
 
 //builder.Services.AddKeyedScoped<IPlayerGenerator, PlayerGenerator>("player");
-builder.Services.AddScoped<IPlayerGenerator, PlayerGenerator>();
 
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureCors();
@@ -24,7 +22,10 @@ builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 
-builder.Services.AddControllers();
+//route the controllers to this class library
+builder.Services.AddControllers().AddApplicationPart(typeof(CompanyEmployees.Infrastructure.Presentation.AssemblyReference).Assembly);
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

@@ -5,9 +5,13 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
+    
     <ItemGroup>
-      <ProjectReference Include="..\Shared\Shared.csproj" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\CompanyEmployees.Core.Services.Abstractions\CompanyEmployees.Core.Services.Abstractions.csproj" />
     </ItemGroup>
 
 </Project>

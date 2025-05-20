@@ -23,6 +23,7 @@
     <ItemGroup>
       <ProjectReference Include="..\CompanyEmployees.Core.Services\CompanyEmployees.Core.Services.csproj" />
       <ProjectReference Include="..\CompanyEmployees.Infrastructure.Persistence\CompanyEmployees.Infrastructure.Persistence.csproj" />
+      <ProjectReference Include="..\CompanyEmployees.Infrastructure.Presentation\CompanyEmployees.Infrastructure.Presentation.csproj" />
       <ProjectReference Include="..\LoggingService\LoggingService.csproj" />
     </ItemGroup>
 
