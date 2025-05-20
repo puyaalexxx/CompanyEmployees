@@ -23,7 +23,7 @@ public static class ServiceExtensions
         services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
 
     public static void ConfigureLoggerService(this IServiceCollection services) => 
-        services.AddScoped<ILoggerManager, LoggerManager>();
+        services.AddSingleton<ILoggerManager, LoggerManager>();
 
     public static void ConfigureRepositoryManager(this IServiceCollection services) =>
         services.AddScoped<IRepositoryManager, RepositoryManager>();
