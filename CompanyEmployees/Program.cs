@@ -1,4 +1,7 @@
+using CompanyEmployees;
+using CompanyEmployees.Extensions;
 using CompanyEmployees.ServiceExtensions;
+using LoggingService;
 using Microsoft.AspNetCore.HttpOverrides;
 using Serilog;
 
@@ -26,14 +29,18 @@ builder.Services.ConfigureServiceManager();
 builder.Services.AddControllers().AddApplicationPart(typeof(CompanyEmployees.Infrastructure.Presentation.AssemblyReference).Assembly);
 
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
+
+app.UseExceptionHandler(opts => { });
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseDeveloperExceptionPage();
+    
 }
 else
 {   
