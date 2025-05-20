@@ -181,3 +181,171 @@ WHERE [c].[CompanyId] = @__companyId_0
 [15:19:07 ERROR] An unhandled exception has occurred while executing the request.
 [15:19:07 ERROR] Something went wrong: The company with id: c9d4c053-49b6-410c-bc78-2d54a9991879 deos not exist in the database.
 [15:19:08 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991879 - 404 null application/problem+json 686.9751ms
+[15:22:39 INFORMATION] Application is shutting down...
+[15:41:58 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[15:41:59 INFORMATION] Now listening on: https://localhost:7025
+[15:41:59 INFORMATION] Now listening on: http://localhost:5266
+[15:41:59 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:41:59 INFORMATION] Hosting environment: Development
+[15:41:59 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[15:42:04 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees - null null
+[15:42:04 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:42:04 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:42:04 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[15:42:08 INFORMATION] Executed DbCommand (98ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:42:08 ERROR] Failed executing DbCommand (53ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[15:42:08 ERROR] An exception occurred while iterating over the results of a query for context type 'CompanyEmployees.Infrastructure.Persistence.RepositoryContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'EmployeeId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:1d577482-bae0-4b7f-b202-596790bba8f3
+Error Number:207,State:1,Class:16
+[15:42:08 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 4420.1351ms
+[15:42:08 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:42:08 ERROR] An unhandled exception has occurred while executing the request.
+[15:42:08 ERROR] Something went wrong: Invalid column name 'EmployeeId'.
+[15:42:09 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees - 500 null application/problem+json 5089.3425ms
+[15:46:50 INFORMATION] Application is shutting down...
+[15:47:19 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[15:47:20 INFORMATION] Now listening on: https://localhost:7025
+[15:47:20 INFORMATION] Now listening on: http://localhost:5266
+[15:47:20 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:47:20 INFORMATION] Hosting environment: Development
+[15:47:20 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[15:47:27 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees - null null
+[15:47:27 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:47:27 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:47:27 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[15:47:31 INFORMATION] Executed DbCommand (95ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:47:32 INFORMATION] Executed DbCommand (31ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[15:47:32 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4262.0025ms.
+[15:47:32 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:47:32 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 5264.7816ms
+[15:47:32 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:47:32 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees - 200 null application/json; charset=utf-8 5407.335ms
+[15:47:46 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991879/employees - null null
+[15:47:46 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:47:46 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:47:46 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[15:47:47 INFORMATION] Executed DbCommand (4ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:47:47 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 180.2014ms
+[15:47:47 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:47:47 ERROR] An unhandled exception has occurred while executing the request.
+[15:47:47 ERROR] Something went wrong: The company with id: c9d4c053-49b6-410c-bc78-2d54a9991879 deos not exist in the database.
+[15:47:47 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991879/employees - 404 null application/problem+json 342.4769ms
+[15:48:20 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees - null null
+[15:48:20 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:48:20 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:48:20 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[15:48:20 INFORMATION] Executed DbCommand (5ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:48:20 INFORMATION] Executed DbCommand (4ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[15:48:20 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 40.0533ms.
+[15:48:20 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:48:20 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 56.4768ms
+[15:48:20 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:48:20 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees - 200 null application/json; charset=utf-8 77.5489ms
+[15:49:58 INFORMATION] Application is shutting down...
+[15:57:44 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[15:57:46 INFORMATION] Now listening on: https://localhost:7025
+[15:57:46 INFORMATION] Now listening on: http://localhost:5266
+[15:57:46 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:57:46 INFORMATION] Hosting environment: Development
+[15:57:46 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[15:57:50 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees/80abbca8-664d-4b20-b5de-024705497d4a - null null
+[15:57:51 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:57:51 INFORMATION] Route matched with {action = "GetEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployeeForCompany(System.Guid, System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:57:52 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[15:57:56 INFORMATION] Executed DbCommand (99ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:57:57 INFORMATION] Executed DbCommand (12ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__employeeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0 AND [e].[EmployeeId] = @__employeeId_1
+[15:57:57 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 5954.683ms
+[15:57:57 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:57:57 ERROR] An unhandled exception has occurred while executing the request.
+[15:57:57 ERROR] Something went wrong: Employee with id: 00000000-0000-0000-0000-000000000000 does not exist in the database.
+[15:57:57 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees/80abbca8-664d-4b20-b5de-024705497d4a - 404 null application/problem+json 6455.6694ms
+[15:59:11 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees/80abbca8-664d-4b20-b5de-024705497d4a - null null
+[15:59:11 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:59:11 INFORMATION] Route matched with {action = "GetEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployeeForCompany(System.Guid, System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:59:11 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[15:59:11 INFORMATION] Executed DbCommand (5ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:59:11 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__employeeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0 AND [e].[EmployeeId] = @__employeeId_1
+[15:59:11 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 462.0984ms
+[15:59:11 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:59:11 ERROR] An unhandled exception has occurred while executing the request.
+[15:59:11 ERROR] Something went wrong: Employee with id: 00000000-0000-0000-0000-000000000000 does not exist in the database.
+[15:59:11 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees/80abbca8-664d-4b20-b5de-024705497d4a - 404 null application/problem+json 525.2601ms
+[16:00:23 INFORMATION] Application is shutting down...
+[16:00:30 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[16:00:31 INFORMATION] Now listening on: https://localhost:7025
+[16:00:32 INFORMATION] Now listening on: http://localhost:5266
+[16:00:32 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:00:32 INFORMATION] Hosting environment: Development
+[16:00:32 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[16:00:39 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees/80abbca8-664d-4b20-b5de-024705497d4a - null null
+[16:00:39 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:00:39 INFORMATION] Route matched with {action = "GetEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployeeForCompany(System.Guid, System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:00:41 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[16:00:48 INFORMATION] Executed DbCommand (141ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:00:48 INFORMATION] Executed DbCommand (8ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__employeeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0 AND [e].[EmployeeId] = @__employeeId_1
+[16:00:48 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7651.5056ms.
+[16:00:48 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.EmployeeDto'.
+[16:00:49 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 9520.6015ms
+[16:00:49 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:00:49 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870/employees/80abbca8-664d-4b20-b5de-024705497d4a - 200 null application/json; charset=utf-8 9932.0646ms
+[16:01:17 INFORMATION] Application is shutting down...
