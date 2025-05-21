@@ -1,0 +1,134 @@
+[11:47:37 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:47:38 INFORMATION] Now listening on: https://localhost:7025
+[11:47:38 INFORMATION] Now listening on: http://localhost:5266
+[11:47:38 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:47:38 INFORMATION] Hosting environment: Development
+[11:47:38 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:49:09 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 107
+[11:49:09 INFORMATION] Executing endpoint '405 HTTP Method Not Supported'
+[11:49:09 INFORMATION] Executed endpoint '405 HTTP Method Not Supported'
+[11:49:09 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 405 0 null 62.0541ms
+[11:49:32 INFORMATION] Application is shutting down...
+[11:49:40 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:49:40 INFORMATION] Now listening on: https://localhost:7025
+[11:49:40 INFORMATION] Now listening on: http://localhost:5266
+[11:49:40 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:49:40 INFORMATION] Hosting environment: Development
+[11:49:40 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:49:47 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 107
+[11:49:47 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:49:47 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:49:48 INFORMATION] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[11:49:48 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 1158.4524ms
+[11:49:48 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:49:48 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 400 null application/problem+json; charset=utf-8 1324.1493ms
+[11:50:24 INFORMATION] Application is shutting down...
+[11:50:32 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:50:33 INFORMATION] Now listening on: https://localhost:7025
+[11:50:33 INFORMATION] Now listening on: http://localhost:5266
+[11:50:33 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:50:33 INFORMATION] Hosting environment: Development
+[11:50:33 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:50:40 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 107
+[11:50:40 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:50:40 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:50:41 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[11:50:44 INFORMATION] Executed DbCommand (274ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[11:50:45 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 3923.0025ms.
+[11:50:45 INFORMATION] Executing CreatedAtRouteResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[11:50:45 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 5219.1226ms
+[11:50:45 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:50:45 ERROR] An unhandled exception has occurred while executing the request.
+[11:50:45 ERROR] Something went wrong: No route matches the supplied values.
+[11:50:45 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 500 null application/problem+json 5551.2006ms
+[11:52:03 INFORMATION] Application is shutting down...
+[11:52:06 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:52:06 INFORMATION] Now listening on: https://localhost:7025
+[11:52:06 INFORMATION] Now listening on: http://localhost:5266
+[11:52:06 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:52:06 INFORMATION] Hosting environment: Development
+[11:52:06 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:52:12 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 107
+[11:52:12 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:52:12 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:52:13 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[11:52:16 INFORMATION] Executed DbCommand (76ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[11:52:16 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 3652.2093ms.
+[11:52:16 INFORMATION] Executing CreatedAtRouteResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[11:52:16 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 4330.0062ms
+[11:52:16 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:52:16 ERROR] An unhandled exception has occurred while executing the request.
+[11:52:16 ERROR] Something went wrong: No route matches the supplied values.
+[11:52:17 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 500 null application/problem+json 4583.9821ms
+[11:52:52 INFORMATION] Application is shutting down...
+[11:52:59 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:53:00 INFORMATION] Now listening on: https://localhost:7025
+[11:53:00 INFORMATION] Now listening on: http://localhost:5266
+[11:53:00 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:53:00 INFORMATION] Hosting environment: Development
+[11:53:00 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:53:09 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 107
+[11:53:09 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:53:09 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:53:10 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[11:53:13 INFORMATION] Executed DbCommand (86ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[11:53:13 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 3301.3961ms.
+[11:53:13 INFORMATION] Executing CreatedAtRouteResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[11:53:14 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 4475.1349ms
+[11:53:14 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:53:14 ERROR] An unhandled exception has occurred while executing the request.
+[11:53:14 ERROR] Something went wrong: No route matches the supplied values.
+[11:53:14 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 500 null application/problem+json 5030.9838ms
+[11:54:14 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:54:14 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[11:54:14 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:54:14 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[11:54:15 INFORMATION] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[11:54:15 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 766.9001ms.
+[11:54:15 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:54:15 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 814.9841ms
+[11:54:15 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[11:54:15 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 874.3516ms
+[11:55:16 INFORMATION] Application is shutting down...
+[11:55:21 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:55:21 INFORMATION] Now listening on: https://localhost:7025
+[11:55:21 INFORMATION] Now listening on: http://localhost:5266
+[11:55:22 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:55:22 INFORMATION] Hosting environment: Development
+[11:55:22 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:55:54 INFORMATION] Application is shutting down...
+[11:55:58 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[11:55:58 INFORMATION] Now listening on: https://localhost:7025
+[11:55:58 INFORMATION] Now listening on: http://localhost:5266
+[11:55:59 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:55:59 INFORMATION] Hosting environment: Development
+[11:55:59 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[11:56:10 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 109
+[11:56:10 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:56:10 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:56:11 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[11:56:15 INFORMATION] Executed DbCommand (80ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[11:56:15 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 3621.3344ms.
+[11:56:15 INFORMATION] Executing CreatedAtRouteResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[11:56:15 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 4674.6719ms
+[11:56:15 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:56:15 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 201 null application/json; charset=utf-8 4802.5796ms
