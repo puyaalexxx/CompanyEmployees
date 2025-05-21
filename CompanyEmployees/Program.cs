@@ -2,6 +2,7 @@ using CompanyEmployees;
 using CompanyEmployees.Infrastructure.Presentation;
 using CompanyEmployees.ServiceExtensions;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,29 +18,33 @@ builder.Host.UseSerilog((hostContext, configuration) =>
 
 //builder.Services.AddKeyedScoped<IPlayerGenerator, PlayerGenerator>("player");
 
-builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIintegration();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
-
-//route the controllers to this class library
-builder.Services.AddControllers(
-        //content negotiation
-        config =>
-        {
-            config.RespectBrowserAcceptHeader = true;
-            //if requesting another media type that is not supported to return 406 Not Acceptable
-            config.ReturnHttpNotAcceptable = true;
-        })
-    .AddXmlDataContractSerializerFormatters()
-    .AddCustomCSVFormatter()
-    .AddApplicationPart(typeof(AssemblyReference).Assembly);
-
+builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
+
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    //suppress the default model state validation from ApiController attribute
+    options.SuppressModelStateInvalidFilter = true;
+});
+
+//route the controllers to this class library
+builder.Services.AddControllers(config =>
+    {
+        //content negotiation
+        config.RespectBrowserAcceptHeader = true;
+        //if requesting another media type that is not supported to return 406 Not Acceptable
+        config.ReturnHttpNotAcceptable = true;
+    }).AddXmlDataContractSerializerFormatters()
+    .AddCustomCSVFormatter()
+    .AddApplicationPart(typeof(CompanyEmployees.Infrastructure.Presentation.AssemblyReference).Assembly);
+
 
 var app = builder.Build();
 
