@@ -467,3 +467,158 @@ VALUES (@p0, @p1, @p2, @p3),
 [13:21:31 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
  - 404 0 null 90.9413ms
 [13:21:31 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)%0A, Response status code: 404
+[13:32:28 INFORMATION] Application is shutting down...
+[13:32:43 WARNING] The WebRootPath was not found: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees/wwwroot. Static files may be unavailable.
+[13:32:44 INFORMATION] Now listening on: https://localhost:7025
+[13:32:44 INFORMATION] Now listening on: http://localhost:5266
+[13:32:44 INFORMATION] Application started. Press Ctrl+C to shut down.
+[13:32:44 INFORMATION] Hosting environment: Development
+[13:32:44 INFORMATION] Content root path: /Users/alexxx/Desktop/Alexxx/projects/dotnet/pet-projects/CompanyEmployees/CompanyEmployees
+[13:32:45 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - null null
+[13:32:46 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - 404 0 null 62.8967ms
+[13:32:46 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)%0A, Response status code: 404
+[13:32:48 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - null null
+[13:32:48 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - 404 0 null 3.0746ms
+[13:32:48 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)%0A, Response status code: 404
+[13:33:22 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33
+ - null null
+[13:33:22 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33
+ - 404 0 null 1.8209ms
+[13:33:22 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/collection/34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33%0A, Response status code: 404
+[13:35:56 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/2d1e1328-8c63-443c-7caa-08dd984aa152/employees - null null
+[13:35:56 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[13:35:56 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[13:35:57 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:36:00 INFORMATION] Executed DbCommand (73ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[13:36:00 INFORMATION] Executed DbCommand (6ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[13:36:00 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3203.4165ms.
+[13:36:00 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:36:00 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 3973.5873ms
+[13:36:00 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:00 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/2d1e1328-8c63-443c-7caa-08dd984aa152/employees - 200 null application/json; charset=utf-8 4056.4374ms
+[13:36:09 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/ - null null
+[13:36:09 INFORMATION] Executing endpoint '405 HTTP Method Not Supported'
+[13:36:09 INFORMATION] Executed endpoint '405 HTTP Method Not Supported'
+[13:36:09 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/ - 405 0 null 1.96ms
+[13:36:19 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(111,1111) - null null
+[13:36:19 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:19 INFORMATION] Route matched with {action = "GetCompanyCollection", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanyCollection(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:36:19 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) in 7.3049ms
+[13:36:19 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:19 ERROR] An unhandled exception has occurred while executing the request.
+[13:36:19 ERROR] Something went wrong: Unrecognized Guid format.
+[13:36:19 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(111,1111) - 500 null application/problem+json 158.2874ms
+[13:36:33 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[13:36:33 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:33 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:36:33 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:36:33 INFORMATION] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[13:36:33 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 119.2729ms.
+[13:36:33 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:36:33 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 130.9046ms
+[13:36:33 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:33 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 134.944ms
+[13:36:42 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3) - null null
+[13:36:42 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:42 INFORMATION] Route matched with {action = "GetCompanyCollection", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanyCollection(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:36:42 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:36:43 INFORMATION] Executed DbCommand (135ms) [Parameters=[@__ids_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] IN (
+    SELECT [i].[value]
+    FROM OPENJSON(@__ids_0) WITH ([value] uniqueidentifier '$') AS [i]
+)
+[13:36:43 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 311.5962ms.
+[13:36:43 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:36:43 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) in 326.5487ms
+[13:36:43 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:43 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3) - 200 null application/json; charset=utf-8 328.1867ms
+[13:36:49 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3, 3d490a70-94ce-4d15-9494-5248280c2ce3) - null null
+[13:36:49 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:49 INFORMATION] Route matched with {action = "GetCompanyCollection", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanyCollection(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:36:49 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:36:49 INFORMATION] Executed DbCommand (4ms) [Parameters=[@__ids_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] IN (
+    SELECT [i].[value]
+    FROM OPENJSON(@__ids_0) WITH ([value] uniqueidentifier '$') AS [i]
+)
+[13:36:49 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) in 19.2907ms
+[13:36:49 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:49 ERROR] An unhandled exception has occurred while executing the request.
+[13:36:49 ERROR] Something went wrong: Collection count mismatch comparing to ids.
+[13:36:49 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3, 3d490a70-94ce-4d15-9494-5248280c2ce3) - 400 null application/problem+json 23.3417ms
+[13:36:55 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3,3d490a70-94ce-4d15-9494-5248280c2ce3) - null null
+[13:36:55 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:55 INFORMATION] Route matched with {action = "GetCompanyCollection", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanyCollection(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:36:55 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:36:55 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__ids_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] IN (
+    SELECT [i].[value]
+    FROM OPENJSON(@__ids_0) WITH ([value] uniqueidentifier '$') AS [i]
+)
+[13:36:55 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) in 21.9706ms
+[13:36:55 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:36:55 ERROR] An unhandled exception has occurred while executing the request.
+[13:36:55 ERROR] Something went wrong: Collection count mismatch comparing to ids.
+[13:36:55 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3,3d490a70-94ce-4d15-9494-5248280c2ce3) - 400 null application/problem+json 63.4056ms
+[13:37:12 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3,c6c179c8-90f7-42f9-b140-08dd984ece33) - null null
+[13:37:12 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:37:12 INFORMATION] Route matched with {action = "GetCompanyCollection", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanyCollection(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:37:12 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:37:12 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__ids_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] IN (
+    SELECT [i].[value]
+    FROM OPENJSON(@__ids_0) WITH ([value] uniqueidentifier '$') AS [i]
+)
+[13:37:12 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.0193ms.
+[13:37:12 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:37:12 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) in 7.5679ms
+[13:37:12 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:37:12 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3,c6c179c8-90f7-42f9-b140-08dd984ece33) - 200 null application/json; charset=utf-8 9.1562ms
+[13:37:27 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - null null
+[13:37:27 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - 404 0 null 1.3096ms
+[13:37:27 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/Companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,c6c179c8-90f7-42f9-b140-08dd984ece33)%0A, Response status code: 404
+[13:37:34 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/Companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33, c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - null null
+[13:37:34 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/Companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33, c6c179c8-90f7-42f9-b140-08dd984ece33)
+ - 404 0 null 0.5599ms
+[13:37:34 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/Companies/collection/(34d78613-2474-47a4-b13f-08dd984ece33,%20c6c179c8-90f7-42f9-b140-08dd984ece33)%0A, Response status code: 404
+[13:37:43 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3,c6c179c8-90f7-42f9-b140-08dd984ece33) - null null
+[13:37:43 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:37:43 INFORMATION] Route matched with {action = "GetCompanyCollection", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanyCollection(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:37:43 INFORMATION] Executing action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) - Validation state: "Valid"
+[13:37:43 INFORMATION] Executed DbCommand (5ms) [Parameters=[@__ids_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] IN (
+    SELECT [i].[value]
+    FROM OPENJSON(@__ids_0) WITH ([value] uniqueidentifier '$') AS [i]
+)
+[13:37:43 INFORMATION] Executed action method CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.6824ms.
+[13:37:43 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:37:43 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation) in 9.5863ms
+[13:37:43 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetCompanyCollection (CompanyEmployees.Infrastructure.Presentation)'
+[13:37:43 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/collection/(3d490a70-94ce-4d15-9494-5248280c2ce3,c6c179c8-90f7-42f9-b140-08dd984ece33) - 200 null application/json; charset=utf-8 10.9563ms
