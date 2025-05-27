@@ -63,4 +63,40 @@ internal sealed class EmployeeService : IEmployeeService
 
         return employeeToReturn;
     }
+
+    public void DeleteEmployeeForCompany(Guid companyId, Guid employeeId, bool trackChanges)
+    {
+        var company = _repository.Company.GetCompany(companyId, trackChanges);
+
+        if (company is null) throw new CompanyNotFoundException(companyId);
+
+        var employeeForCompany = _repository.Employee.GetEmployee(companyId, employeeId, trackChanges);
+
+        if (employeeForCompany is null) throw new EmployeeNotFoundException(employeeId);
+
+        _repository.Employee.DeleteEmployee(employeeForCompany);
+
+        _repository.Save();
+    }
+
+    /// <summary>
+    /// Delete Company if no employees are inside the company
+    /// </summary>
+    /// <param name="companyId"></param>
+    /// <param name="employeeId"></param>
+    /// <param name="trackChanges"></param>
+    /// <exception cref="CompanyNotFoundException"></exception>
+    /// <exception cref="EmployeeNotFoundException"></exception>
+    public void DeleteEmployeeForCompanyAndCompany(Guid companyId, Guid employeeId, bool trackChanges)
+    {
+        var company = _repository.Company.GetCompany(companyId, trackChanges);
+
+        if (company is null) throw new CompanyNotFoundException(companyId);
+
+        var employeeForCompany = _repository.Employee.GetEmployee(companyId, employeeId, trackChanges);
+
+        if (employeeForCompany is null) throw new EmployeeNotFoundException(employeeId);
+
+        _repository.Employee.DeleteEmployeeAndCompany(company, employeeForCompany);
+    }
 }

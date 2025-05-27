@@ -1,0 +1,305 @@
+[13:17:34 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[13:17:34 INFORMATION] Now listening on: https://localhost:7025
+[13:17:34 INFORMATION] Now listening on: http://localhost:5266
+[13:17:35 INFORMATION] Application started. Press Ctrl+C to shut down.
+[13:17:35 INFORMATION] Hosting environment: Development
+[13:17:35 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[13:18:28 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[13:18:28 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[13:18:28 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:18:48 ERROR] An error occurred using the connection to database 'CompanyEmployees' on server 'localhost'.
+[13:18:48 ERROR] An exception occurred while iterating over the results of a query for context type 'CompanyEmployees.Infrastructure.Persistence.RepositoryContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+[14:51:10 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[14:51:10 INFORMATION] Now listening on: https://localhost:7025
+[14:51:10 INFORMATION] Now listening on: http://localhost:5266
+[14:51:11 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:51:11 INFORMATION] Hosting environment: Development
+[14:51:11 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[14:51:43 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[14:51:43 INFORMATION] Now listening on: https://localhost:7025
+[14:51:43 INFORMATION] Now listening on: http://localhost:5266
+[14:51:43 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:51:43 INFORMATION] Hosting environment: Development
+[14:51:43 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[14:52:57 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[14:52:57 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[14:52:57 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[14:52:59 INFORMATION] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[14:52:59 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:52:59 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 2551.4206ms
+[14:52:59 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[14:52:59 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 2697.55ms
+[14:53:16 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/2d1e1328-8c63-443c-7caa-08dd984aa152/employees - null null
+[14:53:16 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:53:16 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:53:16 INFORMATION] Executed DbCommand (85ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[14:54:59 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 103271.2231ms
+[14:54:59 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:54:59 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/2d1e1328-8c63-443c-7caa-08dd984aa152/employees - null null
+[14:54:59 ERROR] An unhandled exception has occurred while executing the request.
+[14:54:59 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:54:59 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:54:59 ERROR] Something went wrong: The company with id: 2d1e1328-8c63-443c-7caa-08dd984aa152 deos not exist in the database.
+[14:54:59 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[14:55:29 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[14:55:29 INFORMATION] Now listening on: https://localhost:7025
+[14:55:29 INFORMATION] Now listening on: http://localhost:5266
+[14:55:30 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:55:30 INFORMATION] Hosting environment: Development
+[14:55:30 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[14:55:34 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[14:55:34 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[14:55:34 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[14:55:36 INFORMATION] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[14:55:36 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:55:36 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 1765.5178ms
+[14:55:36 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[14:55:36 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 1880.3481ms
+[14:55:52 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[14:55:52 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:55:52 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:55:52 INFORMATION] Executed DbCommand (22ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[14:55:52 INFORMATION] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[14:55:52 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:55:52 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 183.447ms
+[14:55:52 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:55:52 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 206.24ms
+[14:55:58 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce5/employees - null null
+[14:55:58 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:55:58 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:55:58 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:00:29 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[15:00:29 INFORMATION] Now listening on: https://localhost:7025
+[15:00:29 INFORMATION] Now listening on: http://localhost:5266
+[15:00:29 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:00:29 INFORMATION] Hosting environment: Development
+[15:00:29 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[15:01:26 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce5/employees - null null
+[15:01:26 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:01:26 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:01:28 INFORMATION] Executed DbCommand (34ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[15:01:28 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 1563.6383ms
+[15:01:28 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[15:01:28 ERROR] An unhandled exception has occurred while executing the request.
+[15:01:28 ERROR] Something went wrong: The company with id: 3d490a70-94ce-4d15-9494-5248280c2ce5 deos not exist in the database.
+[15:01:28 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce5/employees - 404 null application/problem+json 1695.8072ms
+[16:00:59 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:01:00 INFORMATION] Now listening on: https://localhost:7025
+[16:01:00 INFORMATION] Now listening on: http://localhost:5266
+[16:01:00 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:01:00 INFORMATION] Hosting environment: Development
+[16:01:00 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:01:20 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[16:01:20 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[16:01:20 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:01:22 INFORMATION] Executed DbCommand (68ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:01:22 INFORMATION] Executed DbCommand (5ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[16:01:22 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[16:01:22 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 2075.7427ms
+[16:01:22 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[16:01:22 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 2155.0169ms
+[16:02:54 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 85
+[16:02:54 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:54 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:02:54 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:02:54 INFORMATION] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Guid), @p3='?' (Size = 30), @p4='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Employees] ([EmployeeId], [Age], [CompanyId], [Name], [Position])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[16:02:54 INFORMATION] Executing CreatedAtRouteResult, writing value of type 'Shared.DataTransferObjects.EmployeeDto'.
+[16:02:54 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 221.1631ms
+[16:02:54 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:54 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 201 null application/json; charset=utf-8 238.1072ms
+[16:02:58 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[16:02:58 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:58 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:02:58 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:02:58 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[16:02:58 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[16:02:58 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 22.117ms
+[16:02:58 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:58 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 36.3283ms
+[16:03:53 INFORMATION] Request starting HTTP/1.1 DELETE https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees/7d965873-22c5-4f51-9dd5-08dd9d1ecb7f - null null
+[16:03:53 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:03:53 INFORMATION] Route matched with {action = "DeleteEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteEmployeeForCompany(System.Guid, System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:03:53 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:03:53 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__employeeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0 AND [e].[EmployeeId] = @__employeeId_1
+[16:03:53 INFORMATION] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Employees]
+OUTPUT 1
+WHERE [EmployeeId] = @p0;
+[16:03:53 INFORMATION] Executing StatusCodeResult, setting HTTP status code 204
+[16:03:53 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 53.9489ms
+[16:03:53 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:03:53 INFORMATION] Request finished HTTP/1.1 DELETE https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees/7d965873-22c5-4f51-9dd5-08dd9d1ecb7f - 204 null null 67.6416ms
+[16:04:01 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[16:04:01 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[16:04:01 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:04:01 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:04:01 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[16:04:01 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[16:04:01 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 8.4938ms
+[16:04:01 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[16:04:01 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 20.2522ms
+[16:04:23 INFORMATION] Request starting HTTP/1.1 DELETE https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees/7d965873-22c5-4f51-9dd5-08dd9d1ecb7f - null null
+[16:04:23 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:04:23 INFORMATION] Route matched with {action = "DeleteEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteEmployeeForCompany(System.Guid, System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[16:04:24 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:04:24 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__employeeId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0 AND [e].[EmployeeId] = @__employeeId_1
+[16:04:24 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 78.4068ms
+[16:04:24 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.DeleteEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:04:24 ERROR] An unhandled exception has occurred while executing the request.
+[16:04:24 ERROR] Something went wrong: Employee with id: 7d965873-22c5-4f51-9dd5-08dd9d1ecb7f does not exist in the database.
+[16:04:24 INFORMATION] Request finished HTTP/1.1 DELETE https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees/7d965873-22c5-4f51-9dd5-08dd9d1ecb7f - 404 null application/problem+json 124.2144ms
+[16:12:19 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:12:19 INFORMATION] Now listening on: https://localhost:7025
+[16:12:19 INFORMATION] Now listening on: http://localhost:5266
+[16:12:19 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:12:19 INFORMATION] Hosting environment: Development
+[16:12:19 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:14:26 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 109
+[16:14:26 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:14:26 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:14:27 INFORMATION] Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[16:14:27 INFORMATION] Executing CreatedAtRouteResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[16:14:27 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 1130.6289ms
+[16:14:27 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:14:27 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 201 null application/json; charset=utf-8 1207.3611ms
+[16:14:32 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[16:14:32 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[16:14:32 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:14:32 INFORMATION] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[16:14:32 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[16:14:32 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 326.1083ms
+[16:14:32 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[16:14:32 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 342.7551ms
+[16:16:42 INFORMATION] Request starting HTTP/1.1 DELETE https://localhost:7025/api/companies/f10b5b42-cbfa-49e5-cfcc-08dd9d20685c - null null
+[16:16:42 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.DeleteCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:16:42 INFORMATION] Route matched with {action = "DeleteCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteCompany(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:16:42 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[16:16:42 INFORMATION] Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Companies]
+OUTPUT 1
+WHERE [CompanyId] = @p0;
+[16:16:42 INFORMATION] Executing StatusCodeResult, setting HTTP status code 204
+[16:16:42 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.DeleteCompany (CompanyEmployees.Infrastructure.Presentation) in 95.5072ms
+[16:16:42 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.DeleteCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:16:42 INFORMATION] Request finished HTTP/1.1 DELETE https://localhost:7025/api/companies/f10b5b42-cbfa-49e5-cfcc-08dd9d20685c - 204 null null 105.6652ms
+[16:16:45 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[16:16:45 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[16:16:45 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:16:45 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[16:16:45 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[16:16:45 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 8.8368ms
+[16:16:45 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[16:16:45 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 19.4668ms

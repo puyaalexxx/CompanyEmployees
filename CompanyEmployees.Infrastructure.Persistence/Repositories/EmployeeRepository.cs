@@ -28,4 +28,31 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
         
         Create(employee);
     }
+
+    public void DeleteEmployee(Employee employee) => Delete(employee);
+
+    /// <summary>
+    /// Delete Company if no employees are inside the company
+    /// </summary>
+    /// <param name="company"></param>
+    /// <param name="employee"></param>
+    public void DeleteEmployeeAndCompany(Company company, Employee employee)
+    {
+        using var transaction = RepositoryContext.Database.BeginTransaction();
+
+        Delete(employee);
+
+        RepositoryContext.SaveChanges();
+
+        if (!FindByCondition(e => e.CompanyId == company.Id, false).Any())
+        {
+            throw new InvalidOperationException("Cannot delete company with employees still present.");
+
+            RepositoryContext.Companies!.Remove(company);
+
+            RepositoryContext.SaveChanges();
+        }
+
+        transaction.Commit();
+    }
 }

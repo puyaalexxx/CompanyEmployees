@@ -19,4 +19,6 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
         FindByCondition(x => ids.Contains(x.Id), trackChanges).ToList();
 
     public void CreateCompany(Company company) => Create(company);
+
+    public void DeleteCompany(Company company) => Delete(company);
 }
