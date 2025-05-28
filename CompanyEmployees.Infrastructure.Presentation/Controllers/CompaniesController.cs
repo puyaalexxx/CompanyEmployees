@@ -68,4 +68,17 @@ public class CompaniesController : ControllerBase
         
         return NoContent();
     }
+
+    [HttpPut("{companyId:guid}")]
+    public IActionResult UpdateCompany(Guid companyId, [FromBody] CompanyForCreationDto company)
+    {
+        if (company is null)
+        {
+            return BadRequest("CompanyForCreationDto object is null");
+        }
+        
+        _service.CompanyService.UpdateCompany(companyId, company, trackChanges: true);
+        
+        return NoContent();
+    }
 }
