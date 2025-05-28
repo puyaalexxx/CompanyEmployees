@@ -78,7 +78,9 @@ public class CompaniesController : ControllerBase
         }
         
         _service.CompanyService.UpdateCompany(companyId, company, trackChanges: true);
-        
+
+        //test git feature
+
         return NoContent();
     }
 }
