@@ -1,6 +1,7 @@
 using CompanyEmployees;
-using CompanyEmployees.Infrastructure.Presentation;
+using CompanyEmployees.Infrastructure.Presentation.Validators;
 using CompanyEmployees.ServiceExtensions;
+using FluentValidation;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -27,6 +28,7 @@ builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
+builder.Services.AddValidatorsFromAssemblyContaining(typeof(EmployeeForUpdateDtoValidator));
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {

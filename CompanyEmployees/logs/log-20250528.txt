@@ -537,3 +537,395 @@ ORDER BY [e].[Name]
 [14:08:37 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
 [14:08:37 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 37.8579ms
 [14:10:30 INFORMATION] Application is shutting down...
+[14:51:02 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[14:51:02 INFORMATION] Now listening on: https://localhost:7025
+[14:51:02 INFORMATION] Now listening on: http://localhost:5266
+[14:51:02 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:51:02 INFORMATION] Hosting environment: Development
+[14:51:02 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[14:52:08 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[14:52:08 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[14:52:08 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:52:09 INFORMATION] Executed DbCommand (28ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[14:52:09 ERROR] Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Guid), @p3='?' (Size = 30), @p4='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Employees] ([EmployeeId], [Age], [CompanyId], [Name], [Position])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[14:52:09 ERROR] An exception occurred in the database while saving changes for context type 'CompanyEmployees.Infrastructure.Persistence.RepositoryContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'CompanyEmployees.dbo.Employees'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:337b0740-6103-4b9f-994e-65045f821d1a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+[14:52:09 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 1073.9922ms
+[14:52:09 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[14:52:09 ERROR] An unhandled exception has occurred while executing the request.
+[14:52:09 ERROR] Something went wrong: An error occurred while saving the entity changes. See the inner exception for details.
+[14:52:09 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 500 null application/problem+json 1147.9138ms
+[15:39:19 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[15:39:19 INFORMATION] Now listening on: https://localhost:7025
+[15:39:19 INFORMATION] Now listening on: http://localhost:5266
+[15:39:19 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:39:19 INFORMATION] Hosting environment: Development
+[15:39:19 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[15:39:29 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[15:39:29 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:39:29 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:39:29 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[15:39:29 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 221.5962ms
+[15:39:29 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:39:29 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 278.6799ms
+[15:39:52 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 133
+[15:39:52 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:39:52 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:39:52 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[15:39:52 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 8.8008ms
+[15:39:52 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:39:52 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 23.0599ms
+[15:43:00 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[15:43:00 INFORMATION] Now listening on: https://localhost:7025
+[15:43:00 INFORMATION] Now listening on: http://localhost:5266
+[15:43:00 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:43:00 INFORMATION] Hosting environment: Development
+[15:43:00 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[15:43:11 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 117
+[15:43:11 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:43:11 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:43:11 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[15:43:11 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 151.1804ms
+[15:43:11 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:43:11 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 204.1151ms
+[15:52:06 INFORMATION] Application is shutting down...
+[15:52:51 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[15:52:51 INFORMATION] Now listening on: https://localhost:7025
+[15:52:51 INFORMATION] Now listening on: http://localhost:5266
+[15:52:51 INFORMATION] Application started. Press Ctrl+C to shut down.
+[15:52:51 INFORMATION] Hosting environment: Development
+[15:52:51 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[15:53:12 INFORMATION] Request starting HTTP/1.1 PUT https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees/021ca3c1-0deb-4afd-ae94-2159a8479811 - application/json 86
+[15:53:12 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.UpdateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:53:12 INFORMATION] Route matched with {action = "UpdateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateEmployeeForCompany(System.Guid, System.Guid, Shared.DataTransferObjects.EmployeeForManipulationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[15:53:12 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[15:53:12 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.UpdateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 154.0648ms
+[15:53:12 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.UpdateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[15:53:12 INFORMATION] Request finished HTTP/1.1 PUT https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees/021ca3c1-0deb-4afd-ae94-2159a8479811 - 422 null application/json; charset=utf-8 211.1477ms
+[16:02:25 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 86
+[16:02:25 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:25 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:02:26 ERROR] Failed executing DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[16:02:26 ERROR] An exception occurred in the database while saving changes for context type 'CompanyEmployees.Infrastructure.Persistence.RepositoryContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'CompanyEmployees.dbo.Companies'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:8b1ac4b2-4070-41b9-8b87-5994381cd6af
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+[16:02:26 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 683.8864ms
+[16:02:26 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:26 ERROR] An unhandled exception has occurred while executing the request.
+[16:02:26 ERROR] Something went wrong: An error occurred while saving the entity changes. See the inner exception for details.
+[16:02:26 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 500 null application/problem+json 718.2336ms
+[16:02:56 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 65
+[16:02:56 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:56 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:02:56 ERROR] Failed executing DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+[16:02:56 ERROR] An exception occurred in the database while saving changes for context type 'CompanyEmployees.Infrastructure.Persistence.RepositoryContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Address', table 'CompanyEmployees.dbo.Companies'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:8b1ac4b2-4070-41b9-8b87-5994381cd6af
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+[16:02:56 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 58.6307ms
+[16:02:56 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:02:56 ERROR] An unhandled exception has occurred while executing the request.
+[16:02:56 ERROR] Something went wrong: An error occurred while saving the entity changes. See the inner exception for details.
+[16:02:56 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 500 null application/problem+json 72.8572ms
+[16:10:51 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:10:51 INFORMATION] Now listening on: https://localhost:7025
+[16:10:51 INFORMATION] Now listening on: http://localhost:5266
+[16:10:51 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:10:51 INFORMATION] Hosting environment: Development
+[16:10:51 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:11:27 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:11:27 INFORMATION] Now listening on: https://localhost:7025
+[16:11:27 INFORMATION] Now listening on: http://localhost:5266
+[16:11:27 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:11:27 INFORMATION] Hosting environment: Development
+[16:11:27 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:11:32 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 65
+[16:11:32 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:11:32 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:11:32 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[16:11:32 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 155.2053ms
+[16:11:32 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:11:32 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 422 null application/json; charset=utf-8 216.0804ms
+[16:12:05 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:12:05 INFORMATION] Now listening on: https://localhost:7025
+[16:12:05 INFORMATION] Now listening on: http://localhost:5266
+[16:12:05 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:12:05 INFORMATION] Hosting environment: Development
+[16:12:05 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:12:58 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies - application/json 65
+[16:12:58 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:12:58 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:12:58 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[16:12:58 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 159.1776ms
+[16:12:58 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:12:58 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies - 422 null application/json; charset=utf-8 216.0142ms
+[16:13:17 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/ - application/json 334
+[16:13:17 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:13:17 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:13:17 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[16:13:17 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 9.8811ms
+[16:13:17 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:13:17 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/ - 422 null application/json; charset=utf-8 23.6627ms
+[16:13:56 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/ - application/json 342
+[16:13:56 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:13:56 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:13:56 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[16:13:56 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 7.4689ms
+[16:13:56 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:13:56 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/ - 422 null application/json; charset=utf-8 18.5028ms
+[16:14:05 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/ - application/json 331
+[16:14:05 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:14:05 INFORMATION] Route matched with {action = "CreateCompany", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[16:14:05 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[16:14:05 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation) in 1.7176ms
+[16:14:05 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.CreateCompany (CompanyEmployees.Infrastructure.Presentation)'
+[16:14:05 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/ - 422 null application/json; charset=utf-8 12.3668ms
+[16:54:26 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:54:26 INFORMATION] Now listening on: https://localhost:7025
+[16:54:26 INFORMATION] Now listening on: http://localhost:5266
+[16:54:26 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:54:26 INFORMATION] Hosting environment: Development
+[16:54:26 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:11:28 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:11:28 INFORMATION] Now listening on: https://localhost:7025
+[17:11:28 INFORMATION] Now listening on: http://localhost:5266
+[17:11:28 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:11:28 INFORMATION] Hosting environment: Development
+[17:11:28 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:11:39 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 74
+[17:11:39 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:11:39 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:11:39 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:11:39 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 226.2377ms
+[17:11:39 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:11:39 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 302.778ms
+[17:12:48 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:12:48 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:12:48 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:12:48 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:12:48 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 10.4663ms
+[17:12:48 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:12:48 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 22.1091ms
+[17:13:47 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:13:47 INFORMATION] Now listening on: https://localhost:7025
+[17:13:47 INFORMATION] Now listening on: http://localhost:5266
+[17:13:47 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:13:47 INFORMATION] Hosting environment: Development
+[17:13:47 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:13:52 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:13:52 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:13:52 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:13:52 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:13:52 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 208.5242ms
+[17:13:52 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:13:52 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 278.5259ms
+[17:14:06 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[17:14:06 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[17:14:06 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:14:06 INFORMATION] Executed DbCommand (21ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[17:14:06 INFORMATION] Executed DbCommand (4ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[17:14:06 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[17:14:06 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 833.2895ms
+[17:14:06 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[17:14:06 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 852.1415ms
+[17:15:11 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:15:11 INFORMATION] Now listening on: https://localhost:7025
+[17:15:11 INFORMATION] Now listening on: http://localhost:5266
+[17:15:11 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:15:11 INFORMATION] Hosting environment: Development
+[17:15:11 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:15:22 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:15:22 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:15:22 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:16:48 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:16:48 INFORMATION] Now listening on: https://localhost:7025
+[17:16:48 INFORMATION] Now listening on: http://localhost:5266
+[17:16:48 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:16:48 INFORMATION] Hosting environment: Development
+[17:16:48 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:16:54 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:16:54 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:16:54 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:16:54 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:16:54 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 213.9976ms
+[17:16:55 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:16:55 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 280.406ms
+[17:16:57 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:16:57 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:16:57 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:16:57 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:16:57 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 9.744ms
+[17:16:57 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:16:57 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 18.5278ms
+[17:17:02 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 58
+[17:17:02 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:17:02 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:17:02 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:17:02 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 5.8351ms
+[17:17:02 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:17:02 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 15.3511ms
+[17:17:08 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:17:09 INFORMATION] Now listening on: https://localhost:7025
+[17:17:09 INFORMATION] Now listening on: http://localhost:5266
+[17:17:09 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:17:09 INFORMATION] Hosting environment: Development
+[17:17:09 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:17:16 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 58
+[17:17:16 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:17:16 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:18:29 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:18:29 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 72733.25ms
+[17:18:29 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:18:29 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 72811.8673ms
+[17:19:13 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:19:13 INFORMATION] Now listening on: https://localhost:7025
+[17:19:13 INFORMATION] Now listening on: http://localhost:5266
+[17:19:13 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:19:13 INFORMATION] Hosting environment: Development
+[17:19:13 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:19:17 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 58
+[17:19:17 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:19:17 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:19:25 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+[17:19:25 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 7563.1632ms
+[17:19:25 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:19:25 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 7657.9132ms
+[17:20:30 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:20:30 INFORMATION] Now listening on: https://localhost:7025
+[17:20:30 INFORMATION] Now listening on: http://localhost:5266
+[17:20:30 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:20:30 INFORMATION] Hosting environment: Development
+[17:20:30 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:20:38 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 58
+[17:20:38 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:20:38 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:20:39 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[17:20:39 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 279.7862ms
+[17:20:39 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:20:39 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 363.3892ms
+[17:20:59 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:20:59 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:20:59 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:20:59 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[17:20:59 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 9.6991ms
+[17:20:59 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:20:59 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 19.8904ms
+[17:21:41 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:21:41 INFORMATION] Now listening on: https://localhost:7025
+[17:21:41 INFORMATION] Now listening on: http://localhost:5266
+[17:21:41 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:21:41 INFORMATION] Hosting environment: Development
+[17:21:41 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:21:49 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - application/json 60
+[17:21:49 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:21:49 INFORMATION] Route matched with {action = "CreateEmployeeForCompany", controller = "Employees"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateEmployeeForCompany(System.Guid, Shared.DataTransferObjects.EmployeeForCreationDto, FluentValidation.IValidator`1[Shared.DataTransferObjects.EmployeeForCreationDto]) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[17:21:49 INFORMATION] Executing UnprocessableEntityObjectResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[17:21:50 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation) in 227.4768ms
+[17:21:50 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.CreateEmployeeForCompany (CompanyEmployees.Infrastructure.Presentation)'
+[17:21:50 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 422 null application/json; charset=utf-8 293.4232ms

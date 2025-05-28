@@ -23,7 +23,7 @@ public class MappingProfile : Profile
         
         CreateMap<EmployeeForCreationDto, Employee>();
 
-        CreateMap<EmployeeForUpdateDto, Employee>();
+        CreateMap<EmployeeForManipulationDto, Employee>();
 
         CreateMap<CompanyForUpdateDto, Company>();
     }

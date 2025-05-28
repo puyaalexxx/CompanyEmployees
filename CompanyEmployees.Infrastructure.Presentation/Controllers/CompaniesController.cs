@@ -36,7 +36,7 @@ public class CompaniesController : ControllerBase
     public IActionResult GetCompanyCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids)
     {
         var companies = _service.CompanyService.GetByIds(ids, trackChanges: false);
-        
+
         return Ok(companies);
     }
 
@@ -47,17 +47,22 @@ public class CompaniesController : ControllerBase
         {
             return BadRequest("CompanyForCreationDto object is null");
         }
-        
+
+        if (!ModelState.IsValid)
+        {
+            return UnprocessableEntity(ModelState);
+        }
+
         var createdCompany = _service.CompanyService.CreateCompany(company);
-        
+
         return CreatedAtRoute("CompanyById", new { id = createdCompany.Id }, createdCompany);
     }
-    
+
     [HttpPost("collection")]
     public IActionResult CreateCompanyCollection([FromBody] IEnumerable<CompanyForCreationDto> companyCollection)
     {
         var result = _service.CompanyService.CreateCompanyCollection(companyCollection);
-        
+
         return CreatedAtRoute("CompanyCollection", new { result.ids }, result.companies);
     }
 
@@ -65,7 +70,7 @@ public class CompaniesController : ControllerBase
     public IActionResult DeleteCompany(Guid id)
     {
         _service.CompanyService.DeleteCompany(id, trackChanges: false);
-        
+
         return NoContent();
     }
 
@@ -76,10 +81,13 @@ public class CompaniesController : ControllerBase
         {
             return BadRequest("CompanyForCreationDto object is null");
         }
-        
-        _service.CompanyService.UpdateCompany(companyId, company, trackChanges: true);
 
-        //test git feature
+        if (!ModelState.IsValid)
+        {
+            return UnprocessableEntity(ModelState);
+        }
+
+        _service.CompanyService.UpdateCompany(companyId, company, trackChanges: true);
 
         return NoContent();
     }

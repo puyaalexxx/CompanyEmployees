@@ -100,7 +100,7 @@ internal sealed class EmployeeService : IEmployeeService
         _repository.Employee.DeleteEmployeeAndCompany(company, employeeForCompany);
     }
 
-    public void UpdateEmployeeForCompany(Guid companyId, Guid employeeId, EmployeeForUpdateDto employeeForUpdate, bool compTrackChanges, bool empTrackChanges)
+    public void UpdateEmployeeForCompany(Guid companyId, Guid employeeId, EmployeeForManipulationDto employeeForUpdate, bool compTrackChanges, bool empTrackChanges)
     {
         var company = _repository.Company.GetCompany(companyId, compTrackChanges);
 
