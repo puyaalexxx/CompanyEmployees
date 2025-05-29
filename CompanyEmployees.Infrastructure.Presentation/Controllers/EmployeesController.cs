@@ -2,8 +2,11 @@
 
 using CompanyEmployees.Core.Services.Abstractions;
 using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
+using System.Text.Json;
 
 namespace CompanyEmployees.Infrastructure.Presentation.Controllers;
 
@@ -12,7 +15,7 @@ namespace CompanyEmployees.Infrastructure.Presentation.Controllers;
 public class EmployeesController : ControllerBase
 {
     private readonly IServiceManager _service;
-    //using FluentValidations to validate the EmployeeForCreationDto object - if you dont use FromServuces atrribute
+    //using FluentValidations to validate the EmployeeForCreationDto object - if you don't use FromServuces attribute
     //private readonly IValidator<EmployeeForCreationDto> _postValidator;
     //private readonly IValidator<EmployeeForUpdateDto> _putValidator;
 
@@ -24,19 +27,22 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetEmployees(Guid companyId, CancellationToken ct)
+    public async Task<IActionResult> GetEmployeesForCompany(Guid companyId,
+        [FromQuery] EmployeeParameters employeeParameters, CancellationToken ct)
     {
-        var employees = await _service.EmployeeService.GetEmployeesAsync(companyId, false, ct);
+        var pagedResult = await _service.EmployeeService.GetEmployeesAsync(companyId, employeeParameters, false, ct);
 
-        return Ok(employees);
+        Response.Headers.Append("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+
+        return Ok(pagedResult.employees);
     }
 
     [HttpGet("{employeeId:guid}", Name = "GetEmployeeForCompany")]
     public async Task<IActionResult> GetEmployeeForCompany(Guid companyId, Guid employeeId, CancellationToken ct)
     {
-        var employee = await _service.EmployeeService.GetEmployeeAsync(companyId, employeeId, false, ct);
+        var employees = await _service.EmployeeService.GetEmployeeAsync(companyId, employeeId, false, ct);
 
-        return Ok(employee);
+        return Ok(employees);
     }
 
     [HttpPost]

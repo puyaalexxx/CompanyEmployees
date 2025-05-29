@@ -1,12 +1,14 @@
 using CompanyEmployees.Core.Domain.Entities;
+using Shared.RequestFeatures;
 
 namespace CompanyEmployees.Core.Domain.Repositories;
 
 public interface IEmployeeRepository
 {
-    Task<IEnumerable<Employee>> GetEmployeesAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
+    Task<Employee?> GetEmployeeAsync(Guid companyId, Guid employeeId, bool trackChanges, CancellationToken ct = default);
 
-    Task<Employee> GetEmployeeAsync(Guid companyId, Guid employeeId, bool trackChanges, CancellationToken ct = default);
+    Task<PageList<Employee>> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
+        bool trackChanges, CancellationToken ct = default);
 
     void CreatEmployeeForCompany(Guid companyId, Employee employee);
 

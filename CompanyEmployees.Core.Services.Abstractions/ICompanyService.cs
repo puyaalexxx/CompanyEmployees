@@ -1,10 +1,12 @@
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
 
 namespace CompanyEmployees.Core.Services.Abstractions;
 
 public interface ICompanyService
 {
-    Task<IEnumerable<CompanyDto>> GetAllCompaniesAsync(bool trackChanges, CancellationToken ct = default);
+    Task<(IEnumerable<CompanyDto> companies, MetaData metaData)> GetAllCompaniesAsync(CompanyParameters companyParameters,
+        bool trackChanges, CancellationToken ct = default);
 
     Task<CompanyDto> GetCompanyAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
 
@@ -18,5 +20,6 @@ public interface ICompanyService
 
     Task DeleteCompanyAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
 
-    Task UpdateCompanyAsync(Guid companyId, CompanyForCreationDto companyForUpdate, bool trackChanges, CancellationToken ct = default);
+    Task UpdateCompanyAsync(Guid companyId, CompanyForCreationDto companyForUpdate,
+        bool trackChanges, CancellationToken ct = default);
 }

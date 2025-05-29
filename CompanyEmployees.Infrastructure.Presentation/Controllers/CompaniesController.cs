@@ -1,8 +1,11 @@
 using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.ModelBinders;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
+using System.Text.Json;
 
 namespace CompanyEmployees.Infrastructure.Presentation.Controllers;
 
@@ -18,11 +21,13 @@ public class CompaniesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAllCompanies(CancellationToken ct)
+    public async Task<IActionResult> GetAllCompanies([FromQuery] CompanyParameters companyParameters, CancellationToken ct)
     {
-        var companies = await _service.CompanyService.GetAllCompaniesAsync(false, ct);
+        var pagedResult = await _service.CompanyService.GetAllCompaniesAsync(companyParameters, false, ct);
 
-        return Ok(companies);
+        Response.Headers.Append("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+
+        return Ok(pagedResult.companies);
     }
 
     [HttpGet("{id:guid}", Name = "CompanyById")]

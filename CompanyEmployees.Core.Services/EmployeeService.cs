@@ -5,6 +5,7 @@ using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services.Abstractions;
 using LoggingService;
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
 
 namespace CompanyEmployees.Core.Services;
 
@@ -21,13 +22,16 @@ internal sealed class EmployeeService : IEmployeeService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<EmployeeDto>> GetEmployeesAsync(Guid companyId, bool trackChanges, CancellationToken ct = default)
+    public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
+        bool trackChanges, CancellationToken ct = default)
     {
         await CheckIfCompanyExists(companyId, trackChanges, ct);
 
-        var employee = await _repository.Employee.GetEmployeesAsync(companyId, trackChanges, ct);
+        var employeesWithMetadata = await _repository.Employee.GetEmployeesAsync(companyId, employeeParameters, trackChanges, ct);
 
-        return _mapper.Map<IEnumerable<EmployeeDto>>(employee);
+        var employeeDto = _mapper.Map<IEnumerable<EmployeeDto>>(employeesWithMetadata);
+
+        return (employees: employeeDto, metaData: employeesWithMetadata.MetaData);
     }
 
 

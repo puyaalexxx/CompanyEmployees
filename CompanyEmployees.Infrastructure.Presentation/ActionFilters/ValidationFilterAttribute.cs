@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CompanyEmployees.Infrastructure.Presentation.ActionFilters
 {
@@ -24,7 +19,7 @@ namespace CompanyEmployees.Infrastructure.Presentation.ActionFilters
 
             // Correctly accessing ActionArguments from ActionExecutingContext.
             var param = context.ActionArguments
-                .SingleOrDefault(x => x.Value != null && x.Value.ToString().Contains("Dto")).Value;
+                .SingleOrDefault(x => x.Value != null && x.Value.ToString()!.Contains("Dto")).Value;
 
             if (param == null)
             {

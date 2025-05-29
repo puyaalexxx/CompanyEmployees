@@ -5,6 +5,7 @@ using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services.Abstractions;
 using LoggingService;
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
 
 namespace CompanyEmployees.Core.Services;
 
@@ -21,13 +22,14 @@ internal sealed class CompanyService : ICompanyService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<CompanyDto>> GetAllCompaniesAsync(bool trackChanges, CancellationToken ct = default)
+    public async Task<(IEnumerable<CompanyDto> companies, MetaData metaData)> GetAllCompaniesAsync(CompanyParameters companyParameters,
+        bool trackChanges, CancellationToken ct = default)
     {
-        var companies = await _repository.Company.GetAllCompaniesAsync(trackChanges, ct);
+        var companiesWithMetada = await _repository.Company.GetAllCompaniesAsync(companyParameters, trackChanges, ct);
 
-        var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
+        var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companiesWithMetada);
 
-        return companiesDto;
+        return (companies: companiesDto, metaData: companiesWithMetada.MetaData);
     }
 
     public async Task<CompanyDto> GetCompanyAsync(Guid companyId, bool trackChanges, CancellationToken ct = default)

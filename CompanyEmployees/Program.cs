@@ -88,4 +88,4 @@ app.Run(async context =>
     await context.Response.WriteAsync("Hello from the middleware component.");
 });*/
 
-app.Run();
+await app.RunAsync();

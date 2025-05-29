@@ -1,6 +1,7 @@
 using CompanyEmployees.Core.Domain.Entities;
 using CompanyEmployees.Core.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Shared.RequestFeatures;
 
 namespace CompanyEmployees.Infrastructure.Persistence.Repositories;
 
@@ -10,16 +11,26 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     {
     }
 
-    public async Task<IEnumerable<Employee>> GetEmployeesAsync(Guid companyId, bool trackChanges, CancellationToken ct = default)
-    {
-        return await FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges)
-            .OrderBy(e => e.Name).ToListAsync(ct);
-    }
-
-    public async Task<Employee> GetEmployeeAsync(Guid companyId, Guid employeeId, bool trackChanges, CancellationToken ct = default)
+    public async Task<Employee?> GetEmployeeAsync(Guid companyId, Guid employeeId,
+        bool trackChanges, CancellationToken ct = default)
     {
         return await FindByCondition(e => e.CompanyId.Equals(companyId) && e.Id.Equals(employeeId), trackChanges)
             .SingleOrDefaultAsync(ct);
+    }
+
+    public async Task<PageList<Employee>> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
+        bool trackChanges, CancellationToken ct = default)
+    {
+        var employees = await FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges)
+            .OrderBy(e => e.Name)
+            .Skip((employeeParameters.PageNumber - 1) * employeeParameters.PageSize)
+            .Take(employeeParameters.PageSize)
+            .ToListAsync(ct);
+
+        var count = await FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges).CountAsync(ct);
+
+        return PageList<Employee>
+            .ToPageList(employees, count, employeeParameters.PageNumber, employeeParameters.PageSize);
     }
 
     public void CreatEmployeeForCompany(Guid companyId, Employee employee)
