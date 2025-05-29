@@ -1,4 +1,5 @@
 using CompanyEmployees;
+using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.Validators;
 using CompanyEmployees.ServiceExtensions;
 using FluentValidation;
@@ -35,6 +36,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     //suppress the default model state validation from ApiController attribute
     options.SuppressModelStateInvalidFilter = true;
 });
+
+//register custom filters
+builder.Services.AddScoped<ValidationFilterAttribute>();
 
 //route the controllers to this class library
 builder.Services.AddControllers(config =>

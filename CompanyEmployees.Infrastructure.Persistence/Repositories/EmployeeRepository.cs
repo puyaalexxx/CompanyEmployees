@@ -36,23 +36,23 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     /// </summary>
     /// <param name="company"></param>
     /// <param name="employee"></param>
-    public void DeleteEmployeeAndCompany(Company company, Employee employee)
+    public async Task DeleteEmployeeAndCompanyAsync(Company company, Employee employee, CancellationToken ct = default)
     {
-        using var transaction = RepositoryContext.Database.BeginTransaction();
+        using var transaction = await RepositoryContext.Database.BeginTransactionAsync(ct);
 
         Delete(employee);
 
-        RepositoryContext.SaveChanges();
+        await RepositoryContext.SaveChangesAsync(ct);
 
-        if (!FindByCondition(e => e.CompanyId == company.Id, false).Any())
+        if (!(await FindByCondition(e => e.CompanyId == company.Id, false).AnyAsync(ct)))
         {
             //throw new InvalidOperationException("Cannot delete company with employees still present.");
 
             RepositoryContext.Companies!.Remove(company);
 
-            RepositoryContext.SaveChanges();
+            await RepositoryContext.SaveChangesAsync(ct);
         }
 
-        transaction.Commit();
+        await transaction.CommitAsync(ct);
     }
 }

@@ -17,5 +17,5 @@ public interface IEmployeeRepository
     /// </summary>
     /// <param name="company"></param>
     /// <param name="employee"></param>
-    void DeleteEmployeeAndCompany(Company company, Employee employee);
+    Task DeleteEmployeeAndCompanyAsync(Company company, Employee employee, CancellationToken ct = default);
 }
