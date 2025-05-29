@@ -24,24 +24,24 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetEmployees(Guid companyId)
+    public async Task<IActionResult> GetEmployees(Guid companyId, CancellationToken ct)
     {
-        var employees = _service.EmployeeService.GetEmployees(companyId, false);
+        var employees = await _service.EmployeeService.GetEmployeesAsync(companyId, false, ct);
 
         return Ok(employees);
     }
 
     [HttpGet("{employeeId:guid}", Name = "GetEmployeeForCompany")]
-    public IActionResult GetEmployeeForCompany(Guid companyId, Guid employeeId)
+    public async Task<IActionResult> GetEmployeeForCompany(Guid companyId, Guid employeeId, CancellationToken ct)
     {
-        var employee = _service.EmployeeService.GetEmployee(companyId, employeeId, false);
+        var employee = await _service.EmployeeService.GetEmployeeAsync(companyId, employeeId, false, ct);
 
         return Ok(employee);
     }
 
     [HttpPost]
-    public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDto employee,
-        [FromServices] IValidator<EmployeeForCreationDto> validator)
+    public async Task<IActionResult> CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDto employee,
+        [FromServices] IValidator<EmployeeForCreationDto> validator, CancellationToken ct)
     {
         if (employee is null) return BadRequest("EmployeeForCreationDto object is null");
 
@@ -56,23 +56,23 @@ public class EmployeesController : ControllerBase
         }
 
         var employeeToReturn =
-            _service.EmployeeService.CreateEmployeeForCompany(companyId, employee, trackChanges: false);
+            await _service.EmployeeService.CreateEmployeeForCompanyAsync(companyId, employee, trackChanges: false, ct);
 
         return CreatedAtRoute("GetEmployeeForCompany",
             new { companyId = companyId, employeeId = employeeToReturn.Id }, employeeToReturn);
     }
 
     [HttpDelete("{employeeId:guid}")]
-    public IActionResult DeleteEmployeeForCompany(Guid companyId, Guid employeeId)
+    public async Task<IActionResult> DeleteEmployeeForCompany(Guid companyId, Guid employeeId, CancellationToken ct)
     {
-        _service.EmployeeService.DeleteEmployeeForCompany(companyId, employeeId, trackChanges: false);
+        await _service.EmployeeService.DeleteEmployeeForCompanyAsync(companyId, employeeId, trackChanges: false, ct);
 
         return NoContent();
     }
 
     [HttpPut("{employeeId:guid}")]
-    public IActionResult UpdateEmployeeForCompany(Guid companyId, Guid employeeId, [FromBody] EmployeeForUpdateDto employee,
-        [FromServices] IValidator<EmployeeForUpdateDto> validator)
+    public async Task<IActionResult> UpdateEmployeeForCompany(Guid companyId, Guid employeeId, [FromBody] EmployeeForUpdateDto employee,
+        [FromServices] IValidator<EmployeeForUpdateDto> validator, CancellationToken ct)
     {
         if (employee is null) return BadRequest("EmployeeForUpdateDto object is null");
 
@@ -87,8 +87,8 @@ public class EmployeesController : ControllerBase
         }
 
 
-        _service.EmployeeService.UpdateEmployeeForCompany(companyId, employeeId, employee,
-            compTrackChanges: false, empTrackChanges: true);
+        await _service.EmployeeService.UpdateEmployeeForCompanyAsync(companyId, employeeId, employee,
+            compTrackChanges: false, empTrackChanges: true, ct);
 
         return NoContent();
     }
@@ -100,8 +100,8 @@ public class EmployeesController : ControllerBase
     /// <param name="employeeId"></param>
     /// <returns></returns>
     [HttpDelete("remove-employee-and-company/{employeeId:guid}")]
-    public IActionResult DeleteEmployeeForCompanyAndCompany(Guid companyId, Guid employeeId)
+    public async Task<IActionResult> DeleteEmployeeForCompanyAndCompanyAsync(Guid companyId, Guid employeeId, CancellationToken ct)
     {
-        return DeleteEmployeeForCompany(companyId, employeeId);
+        return await DeleteEmployeeForCompany(companyId, employeeId, ct);
     }
 }

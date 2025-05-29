@@ -1,0 +1,83 @@
+[13:33:11 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[13:33:11 INFORMATION] Now listening on: https://localhost:7025
+[13:33:11 INFORMATION] Now listening on: http://localhost:5266
+[13:33:12 INFORMATION] Application started. Press Ctrl+C to shut down.
+[13:33:12 INFORMATION] Hosting environment: Development
+[13:33:12 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[13:34:30 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[13:34:30 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[13:34:30 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Boolean) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[13:34:33 INFORMATION] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[13:34:33 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:34:33 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 2660.9866ms
+[13:34:33 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[13:34:33 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 2728.2047ms
+[13:34:37 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[13:34:37 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[13:34:37 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployees(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[13:34:37 INFORMATION] Executed DbCommand (62ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[13:34:37 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[13:34:37 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:34:37 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 173.0969ms
+[13:34:37 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[13:34:37 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 188.1267ms
+[13:51:38 INFORMATION] Application is shutting down...
+[14:09:49 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[14:09:49 INFORMATION] Now listening on: https://localhost:7025
+[14:09:49 INFORMATION] Now listening on: http://localhost:5266
+[14:09:49 INFORMATION] Application started. Press Ctrl+C to shut down.
+[14:09:49 INFORMATION] Hosting environment: Development
+[14:09:49 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[14:09:53 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[14:09:53 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:09:53 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployees(System.Guid, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:09:54 INFORMATION] Executed DbCommand (25ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[14:09:54 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[14:09:54 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:09:54 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 947.6278ms
+[14:09:54 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:09:54 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 1007.8045ms
+[14:09:56 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - null null
+[14:09:56 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:09:56 INFORMATION] Route matched with {action = "GetEmployees", controller = "Employees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployees(System.Guid, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController (CompanyEmployees.Infrastructure.Presentation).
+[14:09:56 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[14:09:56 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__companyId_0
+ORDER BY [e].[Name]
+[14:09:56 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.EmployeeDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:09:56 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation) in 63.1348ms
+[14:09:56 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.EmployeesController.GetEmployees (CompanyEmployees.Infrastructure.Presentation)'
+[14:09:56 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/3d490a70-94ce-4d15-9494-5248280c2ce3/employees - 200 null application/json; charset=utf-8 75.4784ms
+[14:09:59 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[14:09:59 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[14:09:59 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[14:09:59 INFORMATION] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[14:09:59 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:09:59 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 28.9454ms
+[14:09:59 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[14:09:59 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 43.925ms

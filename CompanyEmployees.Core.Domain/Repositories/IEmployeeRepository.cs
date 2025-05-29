@@ -4,9 +4,9 @@ namespace CompanyEmployees.Core.Domain.Repositories;
 
 public interface IEmployeeRepository
 {
-    IEnumerable<Employee> GetEmployees(Guid companyId, bool trackChanges);
+    Task<IEnumerable<Employee>> GetEmployeesAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
 
-    Employee GetEmployee(Guid companyId, Guid employeeId, bool trackChanges);
+    Task<Employee> GetEmployeeAsync(Guid companyId, Guid employeeId, bool trackChanges, CancellationToken ct = default);
 
     void CreatEmployeeForCompany(Guid companyId, Employee employee);
 

@@ -1,15 +1,14 @@
-using System.Collections;
 using CompanyEmployees.Core.Domain.Entities;
 
 namespace CompanyEmployees.Core.Domain.Repositories;
 
 public interface ICompanyRepository
 {
-    IEnumerable<Company> GetAllCompanies(bool trackChanges);
-    
-    Company GetCompany(Guid companyId, bool trackChanges);
-    
-    IEnumerable<Company> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+    Task<IEnumerable<Company>> GetAllCompaniesAsync(bool trackChanges, CancellationToken ct = default);
+
+    Task<Company> GetCompanyAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
+
+    Task<IEnumerable<Company>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges, CancellationToken ct = default);
 
     void CreateCompany(Company company);
 

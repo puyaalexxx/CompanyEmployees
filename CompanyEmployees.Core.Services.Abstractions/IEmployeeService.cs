@@ -4,13 +4,15 @@ namespace CompanyEmployees.Core.Services.Abstractions;
 
 public interface IEmployeeService
 {
-    IEnumerable<EmployeeDto> GetEmployees(Guid companyId, bool trackChanges);
+    Task<IEnumerable<EmployeeDto>> GetEmployeesAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
 
-    EmployeeDto GetEmployee(Guid companyId, Guid employeeId, bool trackChanges);
-    
-    EmployeeDto CreateEmployeeForCompany(Guid companyId, EmployeeForCreationDto employeeForCreation, bool trackChanges);
+    Task<EmployeeDto> GetEmployeeAsync(Guid companyId, Guid employeeId, bool trackChanges, CancellationToken ct = default);
 
-    void DeleteEmployeeForCompany(Guid companyId, Guid employeeId, bool trackChanges);
+    Task<EmployeeDto> CreateEmployeeForCompanyAsync(Guid companyId, EmployeeForCreationDto employeeForCreation,
+        bool trackChanges, CancellationToken ct = default);
 
-    void UpdateEmployeeForCompany(Guid companyId, Guid employeeId, EmployeeForManipulationDto employeeForUpdate, bool compTrackChanges, bool empTrackChanges);
+    Task DeleteEmployeeForCompanyAsync(Guid companyId, Guid employeeId, bool trackChanges, CancellationToken ct = default);
+
+    Task UpdateEmployeeForCompanyAsync(Guid companyId, Guid employeeId, EmployeeForManipulationDto employeeForUpdate, bool compTrackChanges,
+        bool empTrackChanges, CancellationToken ct = default);
 }

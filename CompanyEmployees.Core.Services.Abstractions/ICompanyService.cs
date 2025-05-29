@@ -1,21 +1,22 @@
-using System.Collections;
 using Shared.DataTransferObjects;
 
 namespace CompanyEmployees.Core.Services.Abstractions;
 
 public interface ICompanyService
 {
-    IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges);
-    
-    CompanyDto GetCompany(Guid companyId, bool trackChanges);
-    
-    IEnumerable<CompanyDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
-    
-    CompanyDto CreateCompany(CompanyForCreationDto company);
+    Task<IEnumerable<CompanyDto>> GetAllCompaniesAsync(bool trackChanges, CancellationToken ct = default);
 
-    (IEnumerable<CompanyDto> companies, string ids) CreateCompanyCollection(IEnumerable<CompanyForCreationDto> companyCollection);
+    Task<CompanyDto> GetCompanyAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
 
-    void DeleteCompany(Guid companyId, bool trackChanges);
+    Task<IEnumerable<CompanyDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges, CancellationToken ct = default);
 
-    void UpdateCompany(Guid companyId, CompanyForCreationDto companyForUpdate, bool trackChanges);
+    Task<CompanyDto> CreateCompanyAsync(CompanyForCreationDto company, CancellationToken ct = default);
+
+    Task<(IEnumerable<CompanyDto> companies, string ids)> CreateCompanyCollectionAsync(
+        IEnumerable<CompanyForCreationDto> companyCollection,
+        CancellationToken ct = default);
+
+    Task DeleteCompanyAsync(Guid companyId, bool trackChanges, CancellationToken ct = default);
+
+    Task UpdateCompanyAsync(Guid companyId, CompanyForCreationDto companyForUpdate, bool trackChanges, CancellationToken ct = default);
 }
