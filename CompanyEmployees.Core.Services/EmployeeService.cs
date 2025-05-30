@@ -53,7 +53,7 @@ internal sealed class EmployeeService : IEmployeeService
 
         var employee = _mapper.Map<Employee>(employeeForCreation);
 
-        _repository.Employee.CreatEmployeeForCompany(companyId, employee);
+        _repository.Employee.CreateEmployeeForCompany(companyId, employee);
 
         await _repository.SaveAsync(ct);
 

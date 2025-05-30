@@ -25,7 +25,7 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
         var employeesQuery = FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges)
             .FilterEmployees(employeeParameters.MinAge, employeeParameters.MaxAge)
             .Search(employeeParameters.SearchTerm ?? String.Empty)
-            .OrderBy(e => e.Name);
+            .Sort(employeeParameters.OrderBy ?? String.Empty);
 
         var count = await employeesQuery.CountAsync(ct);
 
@@ -38,7 +38,7 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
             .ToPageList(employees, count, employeeParameters.PageNumber, employeeParameters.PageSize);
     }
 
-    public void CreatEmployeeForCompany(Guid companyId, Employee employee)
+    public void CreateEmployeeForCompany(Guid companyId, Employee employee)
     {
         employee.CompanyId = companyId;
 

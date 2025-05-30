@@ -10,7 +10,7 @@ public interface IEmployeeRepository
     Task<PageList<Employee>> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
         bool trackChanges, CancellationToken ct = default);
 
-    void CreatEmployeeForCompany(Guid companyId, Employee employee);
+    void CreateEmployeeForCompany(Guid companyId, Employee employee);
 
     void DeleteEmployee(Employee employee);
 
