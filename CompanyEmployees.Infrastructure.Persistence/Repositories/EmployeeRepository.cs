@@ -21,13 +21,16 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     public async Task<PageList<Employee>> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
         bool trackChanges, CancellationToken ct = default)
     {
-        var employees = await FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges)
-            .OrderBy(e => e.Name)
+        var employeesQuery = FindByCondition(
+            e => e.CompanyId.Equals(companyId) && (e.Age >= employeeParameters.MinAge && e.Age <= employeeParameters.MaxAge), trackChanges)
+            .OrderBy(e => e.Name);
+
+        var count = await employeesQuery.CountAsync(ct);
+
+        var employees = await employeesQuery
             .Skip((employeeParameters.PageNumber - 1) * employeeParameters.PageSize)
             .Take(employeeParameters.PageSize)
             .ToListAsync(ct);
-
-        var count = await FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges).CountAsync(ct);
 
         return PageList<Employee>
             .ToPageList(employees, count, employeeParameters.PageNumber, employeeParameters.PageSize);
