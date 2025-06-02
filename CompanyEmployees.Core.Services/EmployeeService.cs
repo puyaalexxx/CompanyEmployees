@@ -6,6 +6,7 @@ using CompanyEmployees.Core.Services.Abstractions;
 using LoggingService;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
+using System.Dynamic;
 
 namespace CompanyEmployees.Core.Services;
 
@@ -14,15 +15,17 @@ internal sealed class EmployeeService : IEmployeeService
     private readonly ILoggerManager _logger;
     private readonly IMapper _mapper;
     private readonly IRepositoryManager _repository;
+    private readonly IDataShaper<EmployeeDto> _dataShaper;
 
-    public EmployeeService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)
+    public EmployeeService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper, IDataShaper<EmployeeDto> dataShaper)
     {
         _repository = repository;
         _logger = logger;
         _mapper = mapper;
+        _dataShaper = dataShaper;
     }
 
-    public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
+    public async Task<(IEnumerable<ExpandoObject> employees, MetaData metaData)> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
         bool trackChanges, CancellationToken ct = default)
     {
         if (!employeeParameters.ValidAgeRange) throw new MaxAgeRangeBadRequestException();
@@ -32,8 +35,9 @@ internal sealed class EmployeeService : IEmployeeService
         var employeesWithMetadata = await _repository.Employee.GetEmployeesAsync(companyId, employeeParameters, trackChanges, ct);
 
         var employeeDto = _mapper.Map<IEnumerable<EmployeeDto>>(employeesWithMetadata);
+        var shapedData = _dataShaper.ShapeData(employeeDto, employeeParameters.Fields!);
 
-        return (employees: employeeDto, metaData: employeesWithMetadata.MetaData);
+        return (employees: shapedData, metaData: employeesWithMetadata.MetaData);
     }
 
 

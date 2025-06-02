@@ -1,4 +1,5 @@
 using CompanyEmployees;
+using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.Validators;
 using CompanyEmployees.ServiceExtensions;
@@ -6,6 +7,8 @@ using FluentValidation;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using Shared.DataTransferObjects;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +33,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 builder.Services.AddValidatorsFromAssemblyContaining(typeof(EmployeeForUpdateDtoValidator));
+builder.Services.AddScoped<IDataShaper<EmployeeDto>, CompanyEmployees.Core.Services.DataShaping.DataShaper<EmployeeDto>>();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
