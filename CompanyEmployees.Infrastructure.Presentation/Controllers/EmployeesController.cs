@@ -1,6 +1,8 @@
 // Ignore Spelling: validator
 
+using CompanyEmployees.Core.Domain.LinkModels;
 using CompanyEmployees.Core.Services.Abstractions;
+using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,14 +29,16 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet]
+    [ServiceFilter(typeof(ValidateMediaAttribute))]
     public async Task<IActionResult> GetEmployeesForCompany(Guid companyId,
         [FromQuery] EmployeeParameters employeeParameters, CancellationToken ct)
     {
-        var pagedResult = await _service.EmployeeService.GetEmployeesAsync(companyId, employeeParameters, false, ct);
+        var linkParams = new LinkParameters(employeeParameters, HttpContext);
+        var result = await _service.EmployeeService.GetEmployeesAsync(companyId, linkParams, false, ct);
 
-        Response.Headers.Append("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+        Response.Headers.Append("X-Pagination", JsonSerializer.Serialize(result.metaData));
 
-        return Ok(pagedResult.employees);
+        return result.linkResponse.HasLinks ? Ok(result.linkResponse.LinkedEntities) : Ok(result.linkResponse.ShapedEntities);
     }
 
     [HttpGet("{employeeId:guid}", Name = "GetEmployeeForCompany")]

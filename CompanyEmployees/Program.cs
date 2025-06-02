@@ -1,5 +1,6 @@
 using CompanyEmployees;
 using CompanyEmployees.Core.Services.Abstractions;
+using CompanyEmployees.Core.Services.Hateoas;
 using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.Validators;
 using CompanyEmployees.ServiceExtensions;
@@ -43,6 +44,8 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 //register custom filters
 builder.Services.AddScoped<ValidationFilterAttribute>();
+builder.Services.AddScoped<ValidateMediaAttribute>();
+builder.Services.AddScoped<IEmployeeLinks, EmployeeLinks>();
 
 //route the controllers to this class library
 builder.Services.AddControllers(config =>
@@ -54,6 +57,9 @@ builder.Services.AddControllers(config =>
     }).AddXmlDataContractSerializerFormatters()
     .AddCustomCSVFormatter()
     .AddApplicationPart(typeof(CompanyEmployees.Infrastructure.Presentation.AssemblyReference).Assembly);
+
+//add custom media types for hateoas implementation
+builder.Services.AddCustomMediaTypes();
 
 
 var app = builder.Build();

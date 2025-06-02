@@ -1,12 +1,12 @@
 using AutoMapper;
 using CompanyEmployees.Core.Domain.Entities;
 using CompanyEmployees.Core.Domain.Exceptions;
+using CompanyEmployees.Core.Domain.LinkModels;
 using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services.Abstractions;
 using LoggingService;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
-using System.Dynamic;
 
 namespace CompanyEmployees.Core.Services;
 
@@ -16,28 +16,30 @@ internal sealed class EmployeeService : IEmployeeService
     private readonly IMapper _mapper;
     private readonly IRepositoryManager _repository;
     private readonly IDataShaper<EmployeeDto> _dataShaper;
+    private readonly IEmployeeLinks _employeeLinks;
 
-    public EmployeeService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper, IDataShaper<EmployeeDto> dataShaper)
+    public EmployeeService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper, IEmployeeLinks employeeLinks)
     {
         _repository = repository;
         _logger = logger;
         _mapper = mapper;
-        _dataShaper = dataShaper;
+        _employeeLinks = employeeLinks;
     }
 
-    public async Task<(IEnumerable<ExpandoObject> employees, MetaData metaData)> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
+    public async Task<(LinkResponse linkResponse, MetaData metaData)> GetEmployeesAsync(Guid companyId, LinkParameters linkParameters,
         bool trackChanges, CancellationToken ct = default)
     {
-        if (!employeeParameters.ValidAgeRange) throw new MaxAgeRangeBadRequestException();
+        if (!linkParameters.EmployeeParameters.ValidAgeRange) throw new MaxAgeRangeBadRequestException();
 
         await CheckIfCompanyExists(companyId, trackChanges, ct);
 
-        var employeesWithMetadata = await _repository.Employee.GetEmployeesAsync(companyId, employeeParameters, trackChanges, ct);
+        var employeesWithMetadata = await _repository.Employee.GetEmployeesAsync(companyId, linkParameters.EmployeeParameters, trackChanges, ct);
 
         var employeeDto = _mapper.Map<IEnumerable<EmployeeDto>>(employeesWithMetadata);
-        var shapedData = _dataShaper.ShapeData(employeeDto, employeeParameters.Fields!);
 
-        return (employees: shapedData, metaData: employeesWithMetadata.MetaData);
+
+        var links = _employeeLinks.TryGenerateLinks(employeeDto, linkParameters.EmployeeParameters.Fields!, companyId, linkParameters.Context);
+        return (linkResponse: links, metaData: employeesWithMetadata.MetaData);
     }
 
 
@@ -140,4 +142,5 @@ internal sealed class EmployeeService : IEmployeeService
 
         return employee;
     }
+
 }
