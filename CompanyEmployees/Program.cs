@@ -54,6 +54,12 @@ builder.Services.AddControllers(config =>
         config.RespectBrowserAcceptHeader = true;
         //if requesting another media type that is not supported to return 406 Not Acceptable
         config.ReturnHttpNotAcceptable = true;
+
+        //config.InputFormatters.Insert(0, GetJsonPatchInputFormatters()); // if we want to use JsonPatchDocument
+        config.CacheProfiles.Add("120SecondsDuration", new CacheProfile
+        {
+            Duration = 120
+        });
     }).AddXmlDataContractSerializerFormatters()
     .AddCustomCSVFormatter()
     .AddApplicationPart(typeof(CompanyEmployees.Infrastructure.Presentation.AssemblyReference).Assembly);
@@ -64,6 +70,11 @@ builder.Services.AddCustomMediaTypes();
 //add api versioning
 builder.Services.ConfigureVersioning();
 
+//using Response Caching
+builder.Services.ConfigureResponseCaching();
+
+//using Output Caching
+builder.Services.ConfigureOutputCaching();
 
 var app = builder.Build();
 
@@ -84,6 +95,9 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 
 app.UseCors("CorsPolicy");
+
+//app.UseResponseCaching();
+app.UseOutputCache();
 
 app.UseAuthentication();
 

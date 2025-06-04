@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CompanyEmployees.ServiceExtensions;
 
+
 public static class ServiceExtensions
 {
     public static void ConfigureCors(this IServiceCollection services) =>
@@ -96,5 +97,21 @@ public static class ServiceExtensions
             .HasDeprecatedApiVersion(new ApiVersion(2.0));*/
 
         });
+
     }
+
+    public static void ConfigureResponseCaching(this IServiceCollection services) =>
+        services.AddResponseCaching();
+
+    public static void ConfigureOutputCaching(this IServiceCollection services) =>
+        services.AddOutputCache(opts =>
+        {
+            opts.AddBasePolicy(bp => bp.Expire(TimeSpan.FromSeconds(10)));
+
+            //policy applied to specific controller
+            opts.AddPolicy("120SecondsDuration", policy => policy.Expire(TimeSpan.FromSeconds(120)));
+
+            //policy applied by query parameter
+            opts.AddPolicy("QueryParamDuration", p => p.Expire(TimeSpan.FromSeconds(10)).SetVaryByQuery("firstKey"));
+        });
 }

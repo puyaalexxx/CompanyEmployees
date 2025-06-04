@@ -4,6 +4,7 @@ using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.ModelBinders;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using System.Text.Json;
@@ -15,6 +16,8 @@ namespace CompanyEmployees.Infrastructure.Presentation.Controllers.v1;
 //[Route("/api/{v:apiversion}/[controller]")]
 [Route("/api/[controller]")]
 [ApiController]
+//[ResponseCache(CacheProfileName = "120SecondsDuration")]
+[OutputCache(PolicyName = "120SecondsDuration")]
 public class CompaniesController : ControllerBase
 {
     private readonly IServiceManager _service;
@@ -35,9 +38,15 @@ public class CompaniesController : ControllerBase
     }
 
     [HttpGet("{id:guid}", Name = "CompanyById")]
+    [OutputCache(Duration = 60)]
+    //[ResponseCache(Duration = 60)]
     public async Task<IActionResult> GetCompany(Guid id, CancellationToken ct)
     {
         var company = await _service.CompanyService.GetCompanyAsync(id, trackChanges: false, ct);
+
+        //cache revalidation
+        var etag = $"\"{Guid.NewGuid():n}\"";
+        HttpContext.Response.Headers.ETag = etag;
 
         return Ok(company);
     }
@@ -93,5 +102,29 @@ public class CompaniesController : ControllerBase
         Response.Headers.Add("Allow", "GET, POST, DELETE, PUT, OPTIONS");
 
         return Ok();
+    }
+
+    /// <summary>
+    /// Disable output caching for this action only
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("output-nocache")]
+    [OutputCache(NoStore = true)]
+    public IActionResult NonCachedOutput()
+    {
+        return Ok("This is a non-cached output response.");
+    }
+
+    /// <summary>
+    /// Enable the cache for the query string parameter
+    /// </summary>
+    /// <param name="firstKey"></param>
+    /// <param name="secondKey"></param>
+    /// <returns></returns>
+    [HttpGet("output-varybykey")]
+    [OutputCache(VaryByQueryKeys = new[] { nameof(firstKey) }, Duration = 10)]
+    public IActionResult VaryByKey(string firstKey, string secondKey)
+    {
+        return Ok($"{firstKey} {secondKey} - retrieved at {DateTime.Now}");
     }
 }
