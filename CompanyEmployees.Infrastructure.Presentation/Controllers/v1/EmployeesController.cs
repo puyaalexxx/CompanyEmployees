@@ -10,7 +10,7 @@ using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using System.Text.Json;
 
-namespace CompanyEmployees.Infrastructure.Presentation.Controllers;
+namespace CompanyEmployees.Infrastructure.Presentation.Controllers.v1;
 
 [ApiController]
 [Route("api/companies/{companyId}/[controller]")]
@@ -70,7 +70,7 @@ public class EmployeesController : ControllerBase
             await _service.EmployeeService.CreateEmployeeForCompanyAsync(companyId, employee, trackChanges: false, ct);
 
         return CreatedAtRoute("GetEmployeeForCompany",
-            new { companyId = companyId, employeeId = employeeToReturn.Id }, employeeToReturn);
+            new { companyId, employeeId = employeeToReturn.Id }, employeeToReturn);
     }
 
     [HttpDelete("{employeeId:guid}")]

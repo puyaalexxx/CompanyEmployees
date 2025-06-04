@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.ModelBinders;
@@ -7,8 +8,11 @@ using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using System.Text.Json;
 
-namespace CompanyEmployees.Infrastructure.Presentation.Controllers;
+namespace CompanyEmployees.Infrastructure.Presentation.Controllers.v1;
 
+[ApiVersion("1.0")]
+//enable URL versioning
+//[Route("/api/{v:apiversion}/[controller]")]
 [Route("/api/[controller]")]
 [ApiController]
 public class CompaniesController : ControllerBase

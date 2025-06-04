@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services;
 using CompanyEmployees.Core.Services.Abstractions;
@@ -71,6 +72,29 @@ public static class ServiceExtensions
                 xmlOutputFormatter.SupportedMediaTypes
                 .Add("application/vnd.juc.apiroot+xml");
             }
+        });
+    }
+
+    public static void ConfigureVersioning(this IServiceCollection services)
+    {
+        services.AddApiVersioning(options =>
+        {
+            options.ReportApiVersions = true;
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+            options.ApiVersionReader = new UrlSegmentApiVersionReader(); // use URL versioning
+            //http header versioning
+            //options.ApiVersionReader = new HeaderApiVersionReader("api-version");
+            //query string versioning
+            //options.ApiVersionReader = new QueryStringApiVersionReader("api-version");
+        }).AddMvc(opts =>
+        {
+            //if we have a lot of versions of a single controller, we can assign these versions in the configurations instead of attributes
+            /*opts.Conventions.Controller<Infrastructure.Presentation.Controllers.v1.CompaniesController>()
+                .HasApiVersion(new ApiVersion(1.0));
+            opts.Conventions.Controller<Infrastructure.Presentation.Controllers.v2.CompaniesController>()
+            .HasDeprecatedApiVersion(new ApiVersion(2.0));*/
+
         });
     }
 }

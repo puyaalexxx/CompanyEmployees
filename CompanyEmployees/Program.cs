@@ -61,6 +61,9 @@ builder.Services.AddControllers(config =>
 //add custom media types for hateoas implementation
 builder.Services.AddCustomMediaTypes();
 
+//add api versioning
+builder.Services.ConfigureVersioning();
+
 
 var app = builder.Build();
 

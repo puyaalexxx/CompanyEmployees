@@ -79,7 +79,7 @@ namespace CompanyEmployees.Core.Services.DataShaping
             }
 
             var objectProperty = entity.GetType().GetProperty("Id");
-            shapedObject.Id = (Guid)objectProperty.GetValue(entity);
+            shapedObject.Id = (Guid)objectProperty.GetValue(entity)!;
 
             return shapedObject;
         }
