@@ -82,4 +82,12 @@ public class CompaniesController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpOptions]
+    public IActionResult GetCompaniesOptions()
+    {
+        Response.Headers.Add("Allow", "GET, POST, DELETE, PUT, OPTIONS");
+
+        return Ok();
+    }
 }
