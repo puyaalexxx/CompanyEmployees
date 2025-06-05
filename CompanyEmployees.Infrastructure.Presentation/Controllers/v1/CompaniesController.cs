@@ -2,6 +2,7 @@ using Asp.Versioning;
 using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.ModelBinders;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
@@ -29,7 +30,8 @@ public class CompaniesController : ControllerBase
     }
 
     [HttpGet(Name = "GetCompanies")]
-    [EnableRateLimiting("RateLimiter")]
+    [EnableRateLimiting("RateLimitPolicy")]
+    [Authorize(Roles = "Manager")]
     public async Task<IActionResult> GetAllCompanies([FromQuery] CompanyParameters companyParameters, CancellationToken ct)
     {
         var pagedResult = await _service.CompanyService.GetAllCompaniesAsync(companyParameters, false, ct);

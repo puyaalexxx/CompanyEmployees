@@ -78,6 +78,11 @@ builder.Services.ConfigureOutputCaching();
 
 builder.Services.ConfigureRateLimitingOptions();
 
+//authentication
+builder.Services.AddAuthentication();
+builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJWT(builder.Configuration);
+
 var app = builder.Build();
 
 app.UseExceptionHandler(opts => { });
@@ -104,6 +109,7 @@ app.UseCors("CorsPolicy");
 app.UseOutputCache();
 
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

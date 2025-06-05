@@ -11,7 +11,7 @@ public class MappingProfile : Profile
         /*CreateMap<Company, CompanyDto>()
             .ForCtorParam("FullAddress",
                 opts => opts.MapFrom(x => $"{x.Address} {x.Country}"));*/
-        
+
         //for content negotiation
         CreateMap<Company, CompanyDto>()
             .ForMember(c => c.FullAddress,
@@ -20,11 +20,13 @@ public class MappingProfile : Profile
         CreateMap<Employee, EmployeeDto>();
 
         CreateMap<CompanyForCreationDto, Company>();
-        
+
         CreateMap<EmployeeForCreationDto, Employee>();
 
         CreateMap<EmployeeForManipulationDto, Employee>();
 
         CreateMap<CompanyForUpdateDto, Company>();
+
+        CreateMap<UserForRegistrationDto, User>();
     }
 }
