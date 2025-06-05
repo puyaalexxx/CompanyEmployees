@@ -4,6 +4,7 @@ using CompanyEmployees.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CompanyEmployees.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20250605134257_AdditionalUserFieldsRefreshToken")]
+    partial class AdditionalUserFieldsRefreshToken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -225,13 +228,13 @@ namespace CompanyEmployees.Infrastructure.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3a9b058f-4a73-4bbf-80d9-819e131ec2aa",
+                            Id = "e7437c6c-22a8-4802-8c25-15ac80264d48",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "66b58c69-b8c4-48e0-a749-96f939d3ce85",
+                            Id = "9cecf9da-afd7-4990-916d-0f285adcedde",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         });

@@ -725,3 +725,254 @@ WHERE [a].[UserId] = @__userId_0
 RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Manager)
 [16:24:48 INFORMATION] AuthenticationScheme: Bearer was forbidden.
 [16:24:48 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 403 0 null 49.0817ms
+[16:41:59 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[16:41:59 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:41:59 INFORMATION] Now listening on: https://localhost:7025
+[16:41:59 INFORMATION] Now listening on: http://localhost:5266
+[16:41:59 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:41:59 INFORMATION] Hosting environment: Development
+[16:41:59 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:42:27 INFORMATION] Application is shutting down...
+[17:40:53 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[17:40:53 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:40:53 INFORMATION] Now listening on: https://localhost:7025
+[17:40:53 INFORMATION] Now listening on: http://localhost:5266
+[17:40:54 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:40:54 INFORMATION] Hosting environment: Development
+[17:40:54 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:40:58 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/authentication/login - application/json 64
+[17:40:58 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[17:40:58 INFORMATION] Route matched with {action = "Authenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(Shared.DataTransferObjects.UserForAuthenticationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController (CompanyEmployees.Infrastructure.Presentation).
+[17:40:59 INFORMATION] Executed DbCommand (33ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[17:40:59 INFORMATION] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[17:40:59 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[17:40:59 INFORMATION] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[17:41:00 INFORMATION] Executed DbCommand (11ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenExpiryTime] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+[17:41:00 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.TokenDto'.
+[17:41:00 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation) in 1550.1076ms
+[17:41:00 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[17:41:00 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/authentication/login - 200 null application/json; charset=utf-8 1666.4856ms
+[17:54:28 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/authentication/login - application/json 64
+[17:54:28 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[17:54:28 INFORMATION] Route matched with {action = "Authenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(Shared.DataTransferObjects.UserForAuthenticationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController (CompanyEmployees.Infrastructure.Presentation).
+[17:54:28 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[17:54:29 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[17:54:29 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[17:54:29 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[17:54:29 INFORMATION] Executed DbCommand (4ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenExpiryTime] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+[17:54:29 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.TokenDto'.
+[17:54:29 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation) in 201.7389ms
+[17:54:29 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[17:54:29 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/authentication/login - 200 null application/json; charset=utf-8 216.8603ms
+[17:54:32 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/authentication/login - application/json 64
+[17:54:32 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[17:54:32 INFORMATION] Route matched with {action = "Authenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(Shared.DataTransferObjects.UserForAuthenticationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController (CompanyEmployees.Infrastructure.Presentation).
+[17:54:32 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[17:54:32 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[17:54:32 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[17:54:32 INFORMATION] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[17:54:32 INFORMATION] Executed DbCommand (7ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenExpiryTime] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+[17:54:32 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.TokenDto'.
+[17:54:32 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation) in 118.322ms
+[17:54:32 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[17:54:32 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/authentication/login - 200 null application/json; charset=utf-8 128.4848ms
+[17:57:41 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[17:57:41 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 404 0 null 3.724ms
+[17:57:41 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7025/api/token/refresh, Response status code: 404
+[17:58:00 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[17:58:00 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:58:00 INFORMATION] Now listening on: https://localhost:7025
+[17:58:00 INFORMATION] Now listening on: http://localhost:5266
+[17:58:00 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:58:00 INFORMATION] Hosting environment: Development
+[17:58:00 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:58:10 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[17:58:10 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 404 0 null 77.5547ms
+[17:58:10 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7025/api/token/refresh, Response status code: 404
+[17:58:42 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[17:58:42 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[17:58:42 INFORMATION] Now listening on: https://localhost:7025
+[17:58:42 INFORMATION] Now listening on: http://localhost:5266
+[17:58:42 INFORMATION] Application started. Press Ctrl+C to shut down.
+[17:58:42 INFORMATION] Hosting environment: Development
+[17:58:42 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[17:58:45 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[17:58:45 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[17:58:45 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[17:58:45 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 212.0291ms
+[17:58:45 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[17:58:45 ERROR] An unhandled exception has occurred while executing the request.
+[17:58:45 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[17:58:45 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 500 null application/problem+json 377.3398ms
+[18:01:23 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:01:23 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:01:23 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:01:23 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 7.5873ms
+[18:01:23 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:01:23 ERROR] An unhandled exception has occurred while executing the request.
+[18:01:23 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[18:01:23 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 500 null application/problem+json 21.9165ms
+[18:26:16 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:26:16 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:26:16 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:26:16 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 9.7866ms
+[18:26:16 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:26:16 ERROR] An unhandled exception has occurred while executing the request.
+[18:26:16 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[18:26:16 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 500 null application/problem+json 22.5319ms
+[18:26:25 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/authentication/login - application/json 64
+[18:26:25 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[18:26:25 INFORMATION] Route matched with {action = "Authenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(Shared.DataTransferObjects.UserForAuthenticationDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController (CompanyEmployees.Infrastructure.Presentation).
+[18:26:26 INFORMATION] Executed DbCommand (27ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[18:26:26 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[18:26:26 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[18:26:26 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[18:26:26 INFORMATION] Executed DbCommand (5ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenExpiryTime] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+[18:26:26 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.TokenDto'.
+[18:26:26 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation) in 1155.0023ms
+[18:26:26 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.AuthenticationController.Authenticate (CompanyEmployees.Infrastructure.Presentation)'
+[18:26:26 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/authentication/login - 200 null application/json; charset=utf-8 1174.908ms
+[18:26:59 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:26:59 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:26:59 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:26:59 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 0.7353ms
+[18:26:59 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:26:59 ERROR] An unhandled exception has occurred while executing the request.
+[18:26:59 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[18:26:59 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 500 null application/problem+json 14.215ms
+[18:27:12 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[18:27:12 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[18:27:12 INFORMATION] Now listening on: https://localhost:7025
+[18:27:12 INFORMATION] Now listening on: http://localhost:5266
+[18:27:12 INFORMATION] Application started. Press Ctrl+C to shut down.
+[18:27:12 INFORMATION] Hosting environment: Development
+[18:27:12 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[18:27:16 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:27:16 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:27:16 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:27:41 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 25032.4879ms
+[18:27:41 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:27:41 ERROR] An unhandled exception has occurred while executing the request.
+[18:27:42 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[18:27:42 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 500 null application/problem+json 25356.3309ms
+[18:28:12 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[18:28:12 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[18:28:12 INFORMATION] Now listening on: https://localhost:7025
+[18:28:12 INFORMATION] Now listening on: http://localhost:5266
+[18:28:13 INFORMATION] Application started. Press Ctrl+C to shut down.
+[18:28:13 INFORMATION] Hosting environment: Development
+[18:28:13 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[18:28:14 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:28:14 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:28:14 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:28:27 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 12921.5134ms
+[18:28:27 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:28:27 ERROR] An unhandled exception has occurred while executing the request.
+[18:28:27 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[18:28:27 INFORMATION] Request finished HTTP/1.1 POST https://localhost:7025/api/token/refresh - 500 null application/problem+json 13202.459ms
+[18:28:40 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[18:28:41 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[18:28:41 INFORMATION] Now listening on: https://localhost:7025
+[18:28:41 INFORMATION] Now listening on: http://localhost:5266
+[18:28:41 INFORMATION] Application started. Press Ctrl+C to shut down.
+[18:28:41 INFORMATION] Hosting environment: Development
+[18:28:41 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[18:28:46 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:28:46 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:28:46 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:29:18 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation) in 32058.8101ms
+[18:29:18 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:29:18 ERROR] An unhandled exception has occurred while executing the request.
+[18:29:31 ERROR] Something went wrong: Value cannot be null. (Parameter 's')
+[18:29:37 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[18:29:38 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[18:29:38 INFORMATION] Now listening on: https://localhost:7025
+[18:29:38 INFORMATION] Now listening on: http://localhost:5266
+[18:29:38 INFORMATION] Application started. Press Ctrl+C to shut down.
+[18:29:38 INFORMATION] Hosting environment: Development
+[18:29:38 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[18:29:40 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:29:40 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:29:40 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).
+[18:30:47 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[18:30:47 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[18:30:47 INFORMATION] Now listening on: https://localhost:7025
+[18:30:47 INFORMATION] Now listening on: http://localhost:5266
+[18:30:47 INFORMATION] Application started. Press Ctrl+C to shut down.
+[18:30:47 INFORMATION] Hosting environment: Development
+[18:30:47 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[18:30:50 INFORMATION] Request starting HTTP/1.1 POST https://localhost:7025/api/token/refresh - application/json 479
+[18:30:50 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController.Refresh (CompanyEmployees.Infrastructure.Presentation)'
+[18:30:50 INFORMATION] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(Shared.DataTransferObjects.TokenDto) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.TokenController (CompanyEmployees.Infrastructure.Presentation).

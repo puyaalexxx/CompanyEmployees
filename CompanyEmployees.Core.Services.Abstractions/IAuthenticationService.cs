@@ -9,6 +9,8 @@ namespace CompanyEmployees.Core.Services.Abstractions
 
         Task<bool> ValidateUser(UserForAuthenticationDto userForAuthentication);
 
-        Task<string> CreateToken();
+        Task<TokenDto> CreateToken(bool populateExp);
+
+        Task<TokenDto> RefreshToken(TokenDto tokenDto);
     }
 }

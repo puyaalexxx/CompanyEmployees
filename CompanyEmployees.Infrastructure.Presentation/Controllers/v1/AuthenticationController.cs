@@ -41,11 +41,9 @@ namespace CompanyEmployees.Infrastructure.Presentation.Controllers.v1
         {
             if (!await _service.AuthenticationService.ValidateUser(user)) return Unauthorized();
 
-            return Ok(
-                new
-                {
-                    Token = await _service.AuthenticationService.CreateToken()
-                });
+            var tokenDto = await _service.AuthenticationService.CreateToken(populateExp: true);
+
+            return Ok(tokenDto);
         }
     }
 }
