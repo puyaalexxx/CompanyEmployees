@@ -1,0 +1,380 @@
+[11:58:12 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[11:58:12 INFORMATION] Now listening on: https://localhost:7025
+[11:58:12 INFORMATION] Now listening on: http://localhost:5266
+[11:58:12 INFORMATION] Application started. Press Ctrl+C to shut down.
+[11:58:12 INFORMATION] Hosting environment: Development
+[11:58:12 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[11:58:17 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:17 INFORMATION] No cached response available for this request.
+[11:58:17 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:58:17 INFORMATION] Route matched with {action = "GetCompany", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompany(System.Guid, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:58:19 INFORMATION] Executed DbCommand (86ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[11:58:19 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[11:58:19 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetCompany (CompanyEmployees.Infrastructure.Presentation) in 2512.7985ms
+[11:58:19 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetCompany (CompanyEmployees.Infrastructure.Presentation)'
+[11:58:19 INFORMATION] The response has been cached.
+[11:58:19 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 null application/json; charset=utf-8 2646.4513ms
+[11:58:23 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:23 INFORMATION] Serving response from cache.
+[11:58:23 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 12.7389ms
+[11:58:24 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:24 INFORMATION] Serving response from cache.
+[11:58:24 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 5.784ms
+[11:58:25 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:25 INFORMATION] Serving response from cache.
+[11:58:25 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 4.7874ms
+[11:58:26 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:26 INFORMATION] Serving response from cache.
+[11:58:26 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 4.8219ms
+[11:58:26 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:26 INFORMATION] Serving response from cache.
+[11:58:26 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 4.4692ms
+[11:58:27 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:27 INFORMATION] Serving response from cache.
+[11:58:27 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 4.5324ms
+[11:58:29 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:29 INFORMATION] Serving response from cache.
+[11:58:29 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 4.6971ms
+[11:58:30 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - null null
+[11:58:30 INFORMATION] Serving response from cache.
+[11:58:30 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/c9d4c053-49b6-410c-bc78-2d54a9991870 - 200 124 application/json; charset=utf-8 6.3607ms
+[11:58:34 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:34 INFORMATION] No cached response available for this request.
+[11:58:34 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[11:58:34 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[11:58:34 INFORMATION] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[11:58:34 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[11:58:34 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[11:58:34 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 112.6082ms
+[11:58:34 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[11:58:34 INFORMATION] The response has been cached.
+[11:58:34 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 129.769ms
+[11:58:35 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:35 INFORMATION] Serving response from cache.
+[11:58:35 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 4.6946ms
+[11:58:36 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:36 INFORMATION] Serving response from cache.
+[11:58:36 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 4.8712ms
+[11:58:36 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:36 INFORMATION] Serving response from cache.
+[11:58:36 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 3.9096ms
+[11:58:37 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:37 INFORMATION] Serving response from cache.
+[11:58:37 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 4.5075ms
+[11:58:37 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:37 INFORMATION] Serving response from cache.
+[11:58:37 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 7.0523ms
+[11:58:38 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[11:58:38 INFORMATION] Serving response from cache.
+[11:58:38 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 5.4565ms
+[11:59:45 FATAL] Application startup exception
+[11:59:45 ERROR] Hosting failed to start
+[12:00:19 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[12:00:19 INFORMATION] Now listening on: https://localhost:7025
+[12:00:19 INFORMATION] Now listening on: http://localhost:5266
+[12:00:19 INFORMATION] Application started. Press Ctrl+C to shut down.
+[12:00:19 INFORMATION] Hosting environment: Development
+[12:00:19 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[12:00:23 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:23 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:23 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:25 INFORMATION] Executed DbCommand (36ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:25 INFORMATION] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:25 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:25 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 1271.8718ms
+[12:00:25 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:25 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 1377.7774ms
+[12:00:26 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:26 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:26 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:26 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:26 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:26 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:26 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 79.6221ms
+[12:00:26 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:26 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 95.8514ms
+[12:00:27 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:27 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:27 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:27 INFORMATION] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:27 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:27 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:27 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 40.1826ms
+[12:00:27 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:27 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 58.2896ms
+[12:00:28 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:28 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:28 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:28 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:28 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:28 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:28 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 13.8951ms
+[12:00:28 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:28 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 26.5031ms
+[12:00:29 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:29 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:29 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:29 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:29 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:29 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:29 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 12.3797ms
+[12:00:29 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:29 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 21.5464ms
+[12:00:30 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:30 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:30 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:30 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:30 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:30 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:30 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 14.5158ms
+[12:00:30 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:30 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 29.2042ms
+[12:00:30 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:30 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:30 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:30 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:30 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:30 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:30 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 13.913ms
+[12:00:30 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:30 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 24.8602ms
+[12:00:31 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:31 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:31 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:31 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:31 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:31 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:31 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 13.7174ms
+[12:00:31 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:31 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 26.3235ms
+[12:00:32 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:32 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:32 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:32 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:32 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:32 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:32 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 10.4034ms
+[12:00:32 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:32 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 19.1937ms
+[12:00:33 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:33 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:33 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:33 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:33 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:33 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:33 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 12.2999ms
+[12:00:33 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:33 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 22.7746ms
+[12:00:34 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:34 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:34 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:34 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:34 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:34 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:34 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 11.5588ms
+[12:00:34 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:34 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 23.5068ms
+[12:00:35 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:35 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:35 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:35 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:35 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:35 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:35 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 13.3343ms
+[12:00:35 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:35 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 23.8473ms
+[12:00:35 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:35 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:35 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:35 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:35 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:35 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:35 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 9.2531ms
+[12:00:35 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:35 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 19.2488ms
+[12:00:36 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:36 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:36 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:36 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:36 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:36 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:36 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 10.938ms
+[12:00:36 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:36 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 21.076ms
+[12:00:38 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:38 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:38 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:38 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:38 INFORMATION] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:38 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:38 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 10.2245ms
+[12:00:38 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:38 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 20.8236ms
+[12:00:39 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:39 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:39 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:39 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:39 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:39 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:39 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 13.1575ms
+[12:00:39 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:39 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 22.5736ms
+[12:00:40 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:00:40 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:40 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:00:40 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:00:40 INFORMATION] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:00:40 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:00:40 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 17.8221ms
+[12:00:40 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:00:40 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 30.4774ms
+[12:07:31 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[12:07:31 INFORMATION] Now listening on: https://localhost:7025
+[12:07:31 INFORMATION] Now listening on: http://localhost:5266
+[12:07:31 INFORMATION] Application started. Press Ctrl+C to shut down.
+[12:07:31 INFORMATION] Hosting environment: Development
+[12:07:31 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[12:07:35 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:35 INFORMATION] No cached response available for this request.
+[12:07:35 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:07:35 INFORMATION] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies(Shared.RequestFeatures.CompanyParameters, System.Threading.CancellationToken) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController (CompanyEmployees.Infrastructure.Presentation).
+[12:07:36 INFORMATION] Executed DbCommand (26ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[12:07:36 INFORMATION] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Companies] AS [c]
+[12:07:36 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:07:36 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation) in 1028.3538ms
+[12:07:36 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:07:36 INFORMATION] The response has been cached.
+[12:07:36 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 null application/json; charset=utf-8 1130.0565ms
+[12:07:38 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:38 INFORMATION] Serving response from cache.
+[12:07:38 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 10.6858ms
+[12:07:39 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:39 INFORMATION] Serving response from cache.
+[12:07:39 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 5.9725ms
+[12:07:40 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:40 INFORMATION] Serving response from cache.
+[12:07:40 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 4.7372ms
+[12:07:41 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:41 INFORMATION] Serving response from cache.
+[12:07:41 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 200 365 application/json; charset=utf-8 4.3473ms
+[12:07:42 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:42 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 429 0 null 3.4794ms
+[12:07:46 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies - null null
+[12:07:46 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies - 429 0 null 3.2496ms

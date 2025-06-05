@@ -76,6 +76,8 @@ builder.Services.ConfigureResponseCaching();
 //using Output Caching
 builder.Services.ConfigureOutputCaching();
 
+builder.Services.ConfigureRateLimitingOptions();
+
 var app = builder.Build();
 
 app.UseExceptionHandler(opts => { });
@@ -93,6 +95,8 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.All
 });
+
+app.UseRateLimiter();
 
 app.UseCors("CorsPolicy");
 

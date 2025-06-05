@@ -5,6 +5,7 @@ using CompanyEmployees.Infrastructure.Presentation.ModelBinders;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.AspNetCore.RateLimiting;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using System.Text.Json;
@@ -28,6 +29,7 @@ public class CompaniesController : ControllerBase
     }
 
     [HttpGet(Name = "GetCompanies")]
+    [EnableRateLimiting("RateLimiter")]
     public async Task<IActionResult> GetAllCompanies([FromQuery] CompanyParameters companyParameters, CancellationToken ct)
     {
         var pagedResult = await _service.CompanyService.GetAllCompaniesAsync(companyParameters, false, ct);

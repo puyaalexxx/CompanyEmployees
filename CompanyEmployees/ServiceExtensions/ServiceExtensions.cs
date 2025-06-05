@@ -8,6 +8,7 @@ using LoggingService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.RateLimiting;
 
 namespace CompanyEmployees.ServiceExtensions;
 
@@ -114,4 +115,41 @@ public static class ServiceExtensions
             //policy applied by query parameter
             opts.AddPolicy("QueryParamDuration", p => p.Expire(TimeSpan.FromSeconds(10)).SetVaryByQuery("firstKey"));
         });
+
+    public static void ConfigureRateLimitingOptions(this IServiceCollection services)
+    {
+        services.AddRateLimiter(options =>
+        {
+            options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(context =>
+            {
+                return RateLimitPartition.GetFixedWindowLimiter("GlobalLimiter",
+                    partition => new FixedWindowRateLimiterOptions
+                    {
+                        AutoReplenishment = true,
+                        PermitLimit = 5,
+                        QueueLimit = 0,
+
+                        //don't reject the exceeded requests but hang them and process them later
+                        // QueueLimit = 2,
+                        // QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+
+                        Window = TimeSpan.FromMinutes(1)
+                    });
+            });
+
+            options.AddPolicy("RateLimitPolicy", context =>
+            {
+                return RateLimitPartition.GetFixedWindowLimiter("RateLimiter",
+                    partition => new FixedWindowRateLimiterOptions
+                    {
+                        AutoReplenishment = true,
+                        PermitLimit = 2,
+                        Window = TimeSpan.FromSeconds(10)
+                    });
+            });
+
+            options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+        });
+    }
+
 }
