@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using CompanyEmployees.Core.Domain.ConfigurationModels;
 using CompanyEmployees.Core.Domain.Entities;
 using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services;
@@ -174,8 +175,8 @@ public static class ServiceExtensions
 
     public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
     {
-        var jwtSettings = configuration.GetSection("JwtSettings");
-        var secretKey = jwtSettings.GetValue<string>("secretKey");
+        var jwtConfiguration = new JwtConfiguration();
+        configuration.Bind(jwtConfiguration.Section, jwtConfiguration);
 
         services.AddAuthentication(options =>
         {
@@ -190,12 +191,13 @@ public static class ServiceExtensions
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
 
-                ValidIssuer = jwtSettings.GetValue<string>("validIssuer"),
-                ValidAudience = jwtSettings.GetValue<string>("validAudience"),
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey!)),
+                ValidIssuer = jwtConfiguration.ValidIssuer,
+                ValidAudience = jwtConfiguration.ValidAudience,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfiguration.SecretKey!)),
             };
         });
-
-
     }
+
+    public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration) => services
+            .Configure<JwtConfiguration>(configuration.GetSection("JwtSettings"));
 }

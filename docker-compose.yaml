@@ -4,6 +4,7 @@
     build:
       context: .
       dockerfile: CompanyEmployees/Dockerfile
+    restart: unless-stopped
   mssql:
     container_name: sql-server-company-employees
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -15,6 +16,7 @@
       - "1433:1433"
     volumes:
       - my-volume:/var/opt/mssql-companyemployees
+    restart: unless-stopped
   seq:
     image: datalust/seq:latest
     container_name: seq
