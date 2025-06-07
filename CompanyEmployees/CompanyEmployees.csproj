@@ -7,6 +7,12 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<DebugType>None</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+		<!--prevent vs from displaying an error when publishing a swagger's xml file if the file already exists in the folder-->
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
 
 	<ItemGroup>

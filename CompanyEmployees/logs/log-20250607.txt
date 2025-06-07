@@ -46,3 +46,19 @@ WHERE [c].[CompanyId] = @__companyId_0
 [13:47:48 INFORMATION] Application started. Press Ctrl+C to shut down.
 [13:47:48 INFORMATION] Hosting environment: Development
 [13:47:48 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:08:51 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[16:08:51 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[16:08:51 INFORMATION] Now listening on: https://localhost:7025
+[16:08:51 INFORMATION] Now listening on: http://localhost:5266
+[16:08:51 INFORMATION] Application started. Press Ctrl+C to shut down.
+[16:08:51 INFORMATION] Hosting environment: Development
+[16:08:51 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[16:11:56 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api - null null
+[16:11:56 INFORMATION] No cached response available for this request.
+[16:11:57 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.RootController.GetRoot (CompanyEmployees.Infrastructure.Presentation)'
+[16:11:57 INFORMATION] Route matched with {action = "GetRoot", controller = "Root"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetRoot(System.String) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.RootController (CompanyEmployees.Infrastructure.Presentation).
+[16:11:57 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CompanyEmployees.Core.Domain.LinkModels.Link, CompanyEmployees.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[16:11:57 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.RootController.GetRoot (CompanyEmployees.Infrastructure.Presentation) in 36.4243ms
+[16:11:57 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.RootController.GetRoot (CompanyEmployees.Infrastructure.Presentation)'
+[16:11:57 INFORMATION] The response has been cached.
+[16:11:57 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api - 200 null application/vnd.juc.apiroot+json; charset=utf-8 1192.5163ms
