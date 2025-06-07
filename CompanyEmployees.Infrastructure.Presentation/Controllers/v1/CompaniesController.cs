@@ -14,8 +14,9 @@ using System.Text.Json;
 namespace CompanyEmployees.Infrastructure.Presentation.Controllers.v1;
 
 [ApiVersion("1.0")]
-//enable URL versioning
-//[Route("/api/{v:apiversion}/[controller]")]
+[ApiExplorerSettings(GroupName = "v1")]
+//[Route("/api/{v:apiversion}/[controller]")] //enable URL versioning
+
 [Route("/api/[controller]")]
 [ApiController]
 //[ResponseCache(CacheProfileName = "120SecondsDuration")]
@@ -29,6 +30,12 @@ public class CompaniesController : ControllerBase
         _service = service;
     }
 
+    /// <summary>
+    /// GetsThe list of all companies with pagination and filtering options.
+    /// </summary>
+    /// <param name="companyParameters">Params</param>
+    /// <param name="ct">Params</param>
+    /// <returns></returns>
     [HttpGet(Name = "GetCompanies")]
     [EnableRateLimiting("RateLimitPolicy")]
     [Authorize(Roles = "Manager")]
@@ -64,7 +71,19 @@ public class CompaniesController : ControllerBase
         return Ok(companies);
     }
 
+
+    /// <summary>
+    /// Creates a newly created company
+    /// </summary>
+    /// <param name="company"></param>
+    /// <returns>A newly created company</returns>
+    /// <response code="201">Returns the newly created item</response>
+    /// <response code="400">If the item is null</response>
+    /// <response code="422">If the model is invalid</response>
     [HttpPost(Name = "CreateCompany")]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(422)]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> CreateCompany([FromBody] CompanyForCreationDto company, CancellationToken ct)
     {

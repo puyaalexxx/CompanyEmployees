@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36121.58 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees", "CompanyEmployees\CompanyEmployees.csproj", "{FB026E2D-FE27-4E9C-ADB6-374FDB396B8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingService", "LoggingService\LoggingService.csproj", "{67B13330-7595-4687-89DD-7CCBFE762223}"
@@ -20,6 +23,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees.Infrastructure.Presentation", "CompanyEmployees.Infrastructure.Presentation\CompanyEmployees.Infrastructure.Presentation.csproj", "{B2CD5FD6-59A1-4CC3-BB25-643CF87C74D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{FEDC3A0F-36A3-403D-A93D-39C839D2194C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees.IntegrationTests", "CompanyEmployees.IntegrationTests\CompanyEmployees.IntegrationTests.csproj", "{1F7ABE0D-4953-4E19-BBDC-FF4CF29E0BA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,5 +64,12 @@ Global
 		{FEDC3A0F-36A3-403D-A93D-39C839D2194C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEDC3A0F-36A3-403D-A93D-39C839D2194C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEDC3A0F-36A3-403D-A93D-39C839D2194C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7ABE0D-4953-4E19-BBDC-FF4CF29E0BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7ABE0D-4953-4E19-BBDC-FF4CF29E0BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7ABE0D-4953-4E19-BBDC-FF4CF29E0BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7ABE0D-4953-4E19-BBDC-FF4CF29E0BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

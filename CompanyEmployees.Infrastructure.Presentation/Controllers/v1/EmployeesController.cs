@@ -109,7 +109,6 @@ public class EmployeesController : ControllerBase
     /// </summary>
     /// <param name="companyId"></param>
     /// <param name="employeeId"></param>
-    /// <returns></returns>
     [HttpDelete("remove-employee-and-company/{employeeId:guid}")]
     public async Task<IActionResult> DeleteEmployeeForCompanyAndCompanyAsync(Guid companyId, Guid employeeId, CancellationToken ct)
     {

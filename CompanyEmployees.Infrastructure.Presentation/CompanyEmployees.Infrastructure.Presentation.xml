@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CompanyEmployees.Infrastructure.Presentation</name>
+    </assembly>
+    <members>
+        <member name="T:CompanyEmployees.Infrastructure.Presentation.ActionFilters.ValidateMediaAttribute">
+            <summary>
+            ates the presence of the Accept header in the request and checks if it is a valid media type.
+            this is for our custom hateoas implementation, which requires the Accept header to be present
+            </summary>
+        </member>
+        <member name="M:CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.GetAllCompanies(Shared.RequestFeatures.CompanyParameters,System.Threading.CancellationToken)">
+            <summary>
+            GetsThe list of all companies with pagination and filtering options.
+            </summary>
+            <param name="companyParameters">Params</param>
+            <param name="ct">Params</param>
+            <returns></returns>
+        </member>
+        <member name="M:CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.CreateCompany(Shared.DataTransferObjects.CompanyForCreationDto,System.Threading.CancellationToken)">
+            <summary>
+            Creates a newly created company
+            </summary>
+            <param name="company"></param>
+            <returns>A newly created company</returns>
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>
+            <response code="422">If the model is invalid</response>
+        </member>
+        <member name="M:CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.NonCachedOutput">
+            <summary>
+            Disable output caching for this action only
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesController.VaryByKey(System.String,System.String)">
+            <summary>
+            Enable the cache for the query string parameter
+            </summary>
+            <param name="firstKey"></param>
+            <param name="secondKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompanyEmployees.Infrastructure.Presentation.Controllers.v1.EmployeesController.DeleteEmployeeForCompanyAndCompanyAsync(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Remove employee from the company and delete the company if it has no employees left. (Additional*)
+            </summary>
+            <param name="companyId"></param>
+            <param name="employeeId"></param>
+        </member>
+    </members>
+</doc>

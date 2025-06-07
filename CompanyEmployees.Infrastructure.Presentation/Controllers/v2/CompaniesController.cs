@@ -7,7 +7,8 @@ using System.Text.Json;
 
 namespace CompanyEmployees.Infrastructure.Presentation.Controllers.v2;
 
-[ApiVersion("2.0", Deprecated = true)]
+[ApiVersion("2.0" /*Deprecated = true*/)]
+[ApiExplorerSettings(GroupName = "v2")]
 //enable URL versioning
 //[Route("/api/{v:apiversion}/companies")]
 [Route("/api/companies")]

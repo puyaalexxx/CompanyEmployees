@@ -24,6 +24,7 @@ builder.Host.UseSerilog((hostContext, configuration) =>
 
 //builder.Services.AddKeyedScoped<IPlayerGenerator, PlayerGenerator>("player");
 
+builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIintegration();
 builder.Services.ConfigureLoggerService();
@@ -84,6 +85,11 @@ builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.AddJwtConfiguration(builder.Configuration);
 
+//health checks
+builder.Services.ConfigureHealthChecks(builder.Configuration);
+
+builder.Services.ConfigureSwagger();
+
 var app = builder.Build();
 
 app.UseExceptionHandler(opts => { });
@@ -95,6 +101,7 @@ else
     app.UseHsts();
 
 app.UseHttpsRedirection();
+app.ConfigureHealthChecksEndpoints();
 app.UseStaticFiles();
 //will forward proxy headers to the current request
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -114,6 +121,14 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CompanyEmployees API V1");
+    c.SwaggerEndpoint("/swagger/v2/swagger.json", "CompanyEmployees API V2");
+    c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
+});
+
 /*app.Use(async (context, next) =>
 {
     Console.WriteLine($"Logic before executing the next delegate in the Use method");
@@ -127,3 +142,5 @@ app.Run(async context =>
 });*/
 
 await app.RunAsync();
+
+public partial class Program { }

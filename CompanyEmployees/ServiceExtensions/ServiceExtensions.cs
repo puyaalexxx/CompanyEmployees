@@ -6,18 +6,20 @@ using CompanyEmployees.Core.Services;
 using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Formatters;
 using CompanyEmployees.Infrastructure.Persistence;
+using HealthChecks.UI.Client;
 using LoggingService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Threading.RateLimiting;
 
 namespace CompanyEmployees.ServiceExtensions;
-
 
 public static class ServiceExtensions
 {
@@ -200,4 +202,91 @@ public static class ServiceExtensions
 
     public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration) => services
             .Configure<JwtConfiguration>(configuration.GetSection("JwtSettings"));
+
+    public static void ConfigureHealthChecks(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddHealthChecks()
+            .AddSqlServer(configuration.GetConnectionString("sqlConnection")!)
+            .AddCheck<CustomHealthCheck>("CustomHealthCheck", tags: ["custom"]);
+
+        //services.AddHealthChecksUI().AddInMemoryStorage(); // Use in-memory storage for health checks UI
+    }
+
+    public static void ConfigureHealthChecksEndpoints(this WebApplication app)
+    {
+        app.MapHealthChecks("/health", new HealthCheckOptions
+        {
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+
+        app.MapHealthChecks("/health/custom", new HealthCheckOptions
+        {
+            Predicate = reg => reg.Tags.Contains("custom"),
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+
+        // app.MapHealthChecksUI(); // Uncomment if you want to use Health Checks UI
+    }
+
+    public static void ConfigureSwagger(this IServiceCollection services)
+    {
+        services.AddSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Company Employees API",
+                Version = "v1",
+                Description = "API for managing company employees.",
+                TermsOfService = new Uri("https://example.com/terms"),
+                Contact = new OpenApiContact
+                {
+                    Name = "Support Team",
+                    Email = "support@mail.com",
+                    Url = new Uri("https://example.com/support")
+                },
+                License = new OpenApiLicense
+                {
+                    Name = "Use under LICX",
+                    Url = new Uri("https://example.com/license")
+                }
+            });
+
+            options.SwaggerDoc("v2", new OpenApiInfo
+            {
+                Title = "Company Employees API",
+                Version = "v2",
+                Description = "API for managing company employees v2.",
+            });
+
+            options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                In = ParameterLocation.Header,
+                Description = "Place to add JWT with Bearer.",
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer"
+            });
+
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                   new List<string>()
+                }
+            });
+
+            //add comments support (check .cproj file for suppressing some warning related to XML comments on methods and controllers and xml file generation)
+            var xmlFile = $"{typeof(Infrastructure.Presentation.AssemblyReference).Assembly.GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            options.IncludeXmlComments(xmlPath);
+
+        });
+    }
 }
