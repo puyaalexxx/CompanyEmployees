@@ -88,6 +88,7 @@ builder.Services.AddJwtConfiguration(builder.Configuration);
 //health checks
 builder.Services.ConfigureHealthChecks(builder.Configuration);
 
+//added swagger support
 builder.Services.ConfigureSwagger();
 
 var app = builder.Build();
