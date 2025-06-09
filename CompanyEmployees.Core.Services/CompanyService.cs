@@ -1,5 +1,6 @@
 using AutoMapper;
 using CompanyEmployees.Core.Domain.Entities;
+using CompanyEmployees.Core.Domain.Entities.Responses;
 using CompanyEmployees.Core.Domain.Exceptions;
 using CompanyEmployees.Core.Domain.Repositories;
 using CompanyEmployees.Core.Services.Abstractions;
@@ -126,4 +127,28 @@ internal sealed class CompanyService : ICompanyService
         return company;
     }
 
+    /// <summary>
+    /// Method with API Response class instead of Exceptions
+    /// </summary>
+    /// <param name="trackChanges"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public ApiBaseResponse GetAllCompanies(bool trackChanges)
+    {
+        var companies = _repository.Company.GetAllCompanies(trackChanges);
+
+        var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
+
+        return new ApiOkResponse<IEnumerable<CompanyDto>>(companiesDto);
+    }
+    public ApiBaseResponse GetCompany(Guid id, bool trackChanges)
+    {
+        var company = _repository.Company.GetCompany(id, trackChanges);
+
+        if (company is null) return new CompanyNotFoundResponse(id);
+
+        var companyDto = _mapper.Map<CompanyDto>(company);
+
+        return new ApiOkResponse<CompanyDto>(companyDto);
+    }
 }

@@ -34,4 +34,11 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
     public void CreateCompany(Company company) => Create(company);
 
     public void DeleteCompany(Company company) => Delete(company);
+
+    // These methods are added to use Api Responses in the service layer examples
+    public IEnumerable<Company> GetAllCompanies(bool trackChanges) =>
+        FindAll(trackChanges).OrderBy(c => c.Name).ToList();
+
+    public Company GetCompany(Guid companyId, bool trackChanges) =>
+        FindByCondition(c => c.Id.Equals(companyId), trackChanges).SingleOrDefault()!;
 }

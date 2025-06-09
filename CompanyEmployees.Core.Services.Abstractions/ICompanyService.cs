@@ -1,3 +1,4 @@
+using CompanyEmployees.Core.Domain.Entities.Responses;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 
@@ -22,4 +23,10 @@ public interface ICompanyService
 
     Task UpdateCompanyAsync(Guid companyId, CompanyForCreationDto companyForUpdate,
         bool trackChanges, CancellationToken ct = default);
+
+
+    // the same methods with APi responses instead
+    ApiBaseResponse GetAllCompanies(bool trackChanges);
+
+    ApiBaseResponse GetCompany(Guid companyId, bool trackChanges);
 }

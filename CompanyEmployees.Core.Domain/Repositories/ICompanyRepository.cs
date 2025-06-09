@@ -14,4 +14,10 @@ public interface ICompanyRepository
     void CreateCompany(Company company);
 
     void DeleteCompany(Company company);
+
+
+    // These methods are added to use Api Responses in the service layer examples
+    IEnumerable<Company> GetAllCompanies(bool trackChanges);
+
+    Company GetCompany(Guid companyId, bool trackChanges);
 }

@@ -1,0 +1,75 @@
+[12:38:32 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:38:32 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[12:38:32 INFORMATION] Now listening on: https://localhost:7025
+[12:38:32 INFORMATION] Now listening on: http://localhost:5266
+[12:38:32 INFORMATION] Application started. Press Ctrl+C to shut down.
+[12:38:32 INFORMATION] Hosting environment: Development
+[12:38:32 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[12:39:09 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:39:09 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[12:39:09 INFORMATION] Now listening on: https://localhost:7025
+[12:39:09 INFORMATION] Now listening on: http://localhost:5266
+[12:39:09 INFORMATION] Application started. Press Ctrl+C to shut down.
+[12:39:09 INFORMATION] Hosting environment: Development
+[12:39:09 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[12:39:20 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/api-reponse - null null
+[12:39:20 INFORMATION] No cached response available for this request.
+[12:39:21 INFORMATION] The response could not be cached for this request.
+[12:39:21 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/api-reponse - 404 0 null 947.5565ms
+[12:39:21 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/api-reponse, Response status code: 404
+[12:39:49 INFORMATION] User profile is available. Using 'C:\Users\puyaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:39:49 WARNING] The WebRootPath was not found: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees\wwwroot. Static files may be unavailable.
+[12:39:49 INFORMATION] Now listening on: https://localhost:7025
+[12:39:49 INFORMATION] Now listening on: http://localhost:5266
+[12:39:49 INFORMATION] Application started. Press Ctrl+C to shut down.
+[12:39:49 INFORMATION] Hosting environment: Development
+[12:39:49 INFORMATION] Content root path: D:\Alexxx\projects\dotnet\pet-projects\CompanyEmployees\CompanyEmployees
+[12:39:56 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/api-reponse - null null
+[12:39:56 INFORMATION] No cached response available for this request.
+[12:39:56 INFORMATION] The response could not be cached for this request.
+[12:39:56 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/api-reponse - 404 0 null 90.3008ms
+[12:39:56 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/api-reponse, Response status code: 404
+[12:40:05 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/api-response - null null
+[12:40:05 INFORMATION] No cached response available for this request.
+[12:40:05 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:40:05 INFORMATION] Route matched with {action = "GetCompanies", controller = "CompaniesControllerWithApiResponse"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompanies() on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse (CompanyEmployees.Infrastructure.Presentation).
+[12:40:07 INFORMATION] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+[12:40:07 INFORMATION] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Shared.DataTransferObjects.CompanyDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:40:07 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompanies (CompanyEmployees.Infrastructure.Presentation) in 1699.0232ms
+[12:40:07 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompanies (CompanyEmployees.Infrastructure.Presentation)'
+[12:40:07 INFORMATION] The response has been cached.
+[12:40:07 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/api-response - 200 null application/json; charset=utf-8 1736.5704ms
+[12:40:54 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2ce3 - null null
+[12:40:54 INFORMATION] No cached response available for this request.
+[12:40:54 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompany (CompanyEmployees.Infrastructure.Presentation)'
+[12:40:54 INFORMATION] Route matched with {action = "GetCompany", controller = "CompaniesControllerWithApiResponse"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompany(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse (CompanyEmployees.Infrastructure.Presentation).
+[12:40:54 INFORMATION] Executed DbCommand (51ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[12:40:54 INFORMATION] Executing OkObjectResult, writing value of type 'Shared.DataTransferObjects.CompanyDto'.
+[12:40:54 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompany (CompanyEmployees.Infrastructure.Presentation) in 145.209ms
+[12:40:54 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompany (CompanyEmployees.Infrastructure.Presentation)'
+[12:40:54 INFORMATION] The response has been cached.
+[12:40:54 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2ce3 - 200 null application/json; charset=utf-8 166.3245ms
+[12:41:19 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2c3 - null null
+[12:41:19 INFORMATION] No cached response available for this request.
+[12:41:19 INFORMATION] The response could not be cached for this request.
+[12:41:19 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2c3 - 404 0 null 4.7786ms
+[12:41:19 INFORMATION] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2c3, Response status code: 404
+[12:41:33 INFORMATION] Request starting HTTP/1.1 GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2c30 - null null
+[12:41:33 INFORMATION] No cached response available for this request.
+[12:41:33 INFORMATION] Executing endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompany (CompanyEmployees.Infrastructure.Presentation)'
+[12:41:33 INFORMATION] Route matched with {action = "GetCompany", controller = "CompaniesControllerWithApiResponse"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCompany(System.Guid) on controller CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse (CompanyEmployees.Infrastructure.Presentation).
+[12:41:33 INFORMATION] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+[12:41:33 INFORMATION] Executing NotFoundObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+[12:41:33 INFORMATION] Executed action CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompany (CompanyEmployees.Infrastructure.Presentation) in 34.2802ms
+[12:41:33 INFORMATION] Executed endpoint 'CompanyEmployees.Infrastructure.Presentation.Controllers.v1.CompaniesControllerWithApiResponse.GetCompany (CompanyEmployees.Infrastructure.Presentation)'
+[12:41:33 INFORMATION] The response could not be cached for this request.
+[12:41:33 INFORMATION] Request finished HTTP/1.1 GET https://localhost:7025/api/companies/api-response/3d490a70-94ce-4d15-9494-5248280c2c30 - 404 null application/problem+json; charset=utf-8 44.484ms
