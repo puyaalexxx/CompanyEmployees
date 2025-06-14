@@ -105,6 +105,15 @@ else
 app.UseHttpsRedirection();
 app.ConfigureHealthChecksEndpoints();
 app.UseStaticFiles();
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CompanyEmployees API V1");
+    c.SwaggerEndpoint("/swagger/v2/swagger.json", "CompanyEmployees API V2");
+    c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
+});
+
 //will forward proxy headers to the current request
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
@@ -126,13 +135,6 @@ app.MapControllers();
 //for docker to run migrations automatically, uncomment the line below
 app.MigrateDatabase().Run();
 
-app.UseSwagger();
-app.UseSwaggerUI(c =>
-{
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CompanyEmployees API V1");
-    c.SwaggerEndpoint("/swagger/v2/swagger.json", "CompanyEmployees API V2");
-    c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
-});
 
 /*app.Use(async (context, next) =>
 {
