@@ -1,22 +1,16 @@
 ﻿services:
-  companyemployees:
-    image: companyemployees
-    build:
-      context: .
-      dockerfile: CompanyEmployees/Dockerfile
-    restart: unless-stopped
   mssql:
-    container_name: sql-server-company-employees
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    #restart: always
+    container_name: sql-server
+    image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "MyStrongPassword12345678"
     ports:
       - "1433:1433"
     volumes:
-      - my-volume:/var/opt/mssql-companyemployees
+      - my-volume:/var/opt/app-mssql
     restart: unless-stopped
+   
   seq:
     image: datalust/seq:latest
     container_name: seq
@@ -32,9 +26,30 @@
       - my-volume:/var/opt/seq/data:/data
     restart: unless-stopped
 
+  # this is the runtime image, it will run the app in production mode
+  companyemployees:
+    container_name: company-employees-runtime
+    depends_on:
+      - mssql
+      - seq
+    image: puyaalexxx/companyemployees:runtime
+    ports:
+      - "5266:5266"  # HTTP port
+      - "7025:7025"  # HTTPS port
+    environment:
+       - ASPNETCORE_Kestrel__Certificates__Default__Password=awesomepass
+       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/companyemployees.pfx
+       #- SECRET=CodeMazeSecretKey123456789!!!!!! -> this secret was used in the book for JWT tokens, I added it in the appsettings.json file instead
+    volumes:
+       - ${USERPROFILE}/.aspnet/https:/https/
+    build: # docker-compose up --build - when making a change in the app, rebuild it to see the live changes
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+
 volumes:
   my-volume:
 
-networks:
-  mynetwork:
-    driver: bridge
+#networks:
+#  mynetwork:
+#    driver: bridge

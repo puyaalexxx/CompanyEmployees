@@ -1,6 +1,7 @@
 using CompanyEmployees;
 using CompanyEmployees.Core.Services.Abstractions;
 using CompanyEmployees.Core.Services.Hateoas;
+using CompanyEmployees.Infrastructure.Persistence;
 using CompanyEmployees.Infrastructure.Presentation.ActionFilters;
 using CompanyEmployees.Infrastructure.Presentation.Validators;
 using CompanyEmployees.ServiceExtensions;
@@ -121,6 +122,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//for docker to run migrations automatically, uncomment the line below
+app.MigrateDatabase().Run();
 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
