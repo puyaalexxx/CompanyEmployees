@@ -1,1 +1,39 @@
-# CompanyEmployees
+# CompanyEmployees - Asp.NET Core 9 API + Onion Architecture - Pet Project
+
+## Features
+- Onion Architecture
+- Dependency Injection
+- CORS
+- Serilog for structured logging
+- Serilog Sinks for logging to Console, File, and Seq
+- Docker and docker-compose support
+- SQL server database support
+- Entity Framework Core
+- Fluent API 
+- Global Exception Handling with Custom Exceptions
+- Fluent Validation and ModelState Validation
+- JWT Authentication and Authorization
+- Refresh Tokens
+- Migrations and Data Seed
+- DTOs for Data Transfer
+- Automapper for DTO Mapping
+- Content Negotiation - support for XML and JSON
+- Custom Formatters - CSV
+- Model Binding
+- Custom Filters for Validation
+- Paging, Filtering, Sorting and Searching for Employees
+- Data Shaping for Employees
+- HATEOAS - Hypermedia as the Engine of Application State
+- Options and Head HTTP Methods
+- Root Document Implementation
+- API versioning
+- Response and Output Caching
+- Rate Limiting
+- Options Pattern
+- Health Checks
+- Swagger Support
+- OpenAPI Documentation
+- Swagger authentication support
+- Swagger UI Customization
+- Integration Tests with TestContainers
+- DEployment locally to IIS
